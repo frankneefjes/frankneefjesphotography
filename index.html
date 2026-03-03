@@ -87,5 +87,23 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+    const heroSlides = document.querySelectorAll('#hero .hero-bg');
+let heroIndex = 0;
+
+function showHeroSlide(index) {
+  heroSlides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if(i === index) slide.classList.add('active');
+  });
+}
+
+function nextHeroSlide() {
+  heroIndex = (heroIndex + 1) % heroSlides.length;
+  showHeroSlide(heroIndex);
+}
+
+showHeroSlide(heroIndex);
+setInterval(nextHeroSlide, 5000);
+</script>
 </body>
 </html>
