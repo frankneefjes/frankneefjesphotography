@@ -1,231 +1,66 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Frank Neefjes Photography</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #0c0c0c;
-    color: #f5f5f5;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-}
-
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 25px 60px;
-    display: flex;
-    justify-content: space-between;
-    background: rgba(12,12,12,0.85);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
-}
-
-nav a {
-    color: #f5f5f5;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    opacity: 0.6;
-}
-
-.hero {
-    height: 100vh;
-    background: url('hero.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    font-weight: 600;
-}
-
-.hero p {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-section {
-    padding: 120px 10%;
-    max-width: 1400px;
-    margin: auto;
-}
-
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.grid img {
-    width: 100%;
-    display: block;
-    transition: 0.4s ease;
-}
-
-.grid img:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-}
-
-.about p {
-    max-width: 700px;
-    font-size: 1.1rem;
-    opacity: 0.85;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 28px;
-    border: 1px solid #f5f5f5;
-    text-decoration: none;
-    color: #f5f5f5;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background: #f5f5f5;
-    color: #0c0c0c;
-}
-
-footer {
-    text-align: center;
-    padding: 60px;
-    font-size: 0.8rem;
-    opacity: 0.6;
-}
-
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 1s ease;
-}
-
-.fade.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-    nav {
-        padding: 20px;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<nav>
-    <div>Frank Neefjes</div>
-    <div>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#stories">Stories</a>
-        <a href="#prints">Prints</a>
-        <a href="#stock">Stock</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+<header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Frank Neefjes</h1>
+        <p>Travel & Documentary Photography</p>
+        <a href="#portfolio" class="btn">View Portfolio</a>
     </div>
-</nav>
+</header>
 
-<div class="hero">
-    <h1>Frank Neefjes</h1>
-    <p>Documentary & Travel Photography</p>
-    <p>Ik reis alleen. Om dichterbij te komen.</p>
-</div>
-
-<section id="portfolio" class="fade">
+<section id="portfolio" class="section">
     <h2>Portfolio</h2>
     <div class="grid">
-        <img src="photo1.jpg" alt="">
-        <img src="photo2.jpg" alt="">
-        <img src="photo3.jpg" alt="">
+        <img src="https://source.unsplash.com/800x1000/?mountains" alt="">
+        <img src="https://source.unsplash.com/800x1000/?desert" alt="">
+        <img src="https://source.unsplash.com/800x1000/?india" alt="">
+        <img src="https://source.unsplash.com/800x1000/?himalaya" alt="">
+        <img src="https://source.unsplash.com/800x1000/?portrait,travel" alt="">
+        <img src="https://source.unsplash.com/800x1000/?monk" alt="">
     </div>
 </section>
 
-<section id="stories" class="fade">
-    <h2>Stories</h2>
-    <p>Reisverhalen uit Ladakh, Kashmir, de Kaukasus en andere afgelegen regio’s.</p>
-</section>
-
-<section id="prints" class="fade">
-    <h2>Fine Art Prints</h2>
-    <p>Limited edition prints, gesigneerd en genummerd. Museumkwaliteit papier.</p>
-    <a href="#" class="button">Bekijk Collectie</a>
-</section>
-
-<section id="stock" class="fade">
-    <h2>Stock & Licensing</h2>
-    <p>Beschikbaar voor redactionele en commerciële licenties wereldwijd.</p>
-    <a href="#" class="button">Licentie Aanvragen</a>
-</section>
-
-<section id="about" class="about fade">
-    <h2>About</h2>
+<section class="section about">
+    <h2>I Travel Alone</h2>
     <p>
-        Ik reis alleen door afgelegen regio’s om menselijke verhalen vast te leggen.
-        Tijd nemen, luisteren en vertrouwen winnen vormen de kern van mijn werk.
-        Mijn fotografie draait om verbinding, stilte en authenticiteit.
+        I travel alone to experience places without filters. 
+        To connect with people, cultures and landscapes in their purest form.
+        My photography is about silence, distance and human stories.
     </p>
 </section>
 
-<section id="contact" class="fade">
+<section class="section prints">
+    <h2>Fine Art Prints</h2>
+    <p>Selected works available as museum-quality prints.</p>
+    <a href="#" class="btn">Coming Soon</a>
+</section>
+
+<section class="section stories">
+    <h2>Travel Stories</h2>
+    <p>Long-form visual stories from Ladakh, Kashmir and beyond.</p>
+    <a href="#" class="btn">Read Stories</a>
+</section>
+
+<section class="section contact">
     <h2>Contact</h2>
+    <p>Available for assignments & collaborations.</p>
     <p>Email: top94058@hotmail.com</p>
 </section>
 
 <footer>
-    © 2026 Frank Neefjes Photography
+    <p>© 2026 Frank Neefjes Photography</p>
 </footer>
-
-<script>
-const faders = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-    faders.forEach(fade => {
-        const rect = fade.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100){
-            fade.classList.add('visible');
-        }
-    });
-});
-</script>
 
 </body>
 </html>
