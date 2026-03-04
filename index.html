@@ -29,15 +29,166 @@
 </header>
 
 <section id="portfolio" class="section">
-    <h2>Portfolio</h2>
-    <div class="grid">
-        <img src="https://source.unsplash.com/800x1000/?mountains" alt="">
-        <img src="https://source.unsplash.com/800x1000/?desert" alt="">
-        <img src="https://source.unsplash.com/800x1000/?india" alt="">
-        <img src="https://source.unsplash.com/800x1000/?himalaya" alt="">
-        <img src="https://source.unsplash.com/800x1000/?portrait,travel" alt="">
-        <img src="https://source.unsplash.com/800x1000/?monk" alt="">
-    </div>
+    <!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Frank Neefjes — Documentary Travel Photography</title>
+  <meta name="description" content="Documentary travel photography — human stories from remote places." />
+
+  <style>
+    :root{
+      --bg:#070809;
+      --fg:#e9ecef;
+      --muted:#a9b0b7;
+      --line:rgba(255,255,255,.10);
+      --shadow:rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--fg);
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(255,255,255,.06), transparent 55%),
+                  radial-gradient(1000px 700px at 80% 20%, rgba(255,255,255,.04), transparent 60%),
+                  var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Header */
+    header{
+      position:fixed; inset:0 0 auto 0;
+      z-index:50;
+      background: linear-gradient(to bottom, rgba(7,8,9,.85), rgba(7,8,9,.35), transparent);
+      backdrop-filter: blur(8px);
+    }
+    .nav{
+      height:64px; display:flex; align-items:center; justify-content:space-between;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      font-size:12px;
+    }
+    .brand span{color:var(--muted); font-weight:600}
+    .menu{
+      display:flex; gap:18px; align-items:center; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--muted);
+    }
+    .menu a{padding:10px 8px; border-radius:999px}
+    .menu a:hover{color:var(--fg); background:rgba(255,255,255,.06)}
+
+    /* Hero slider */
+    #hero{
+      position:relative;
+      height:100svh;
+      min-height:680px;
+      overflow:hidden;
+    }
+    .hero-slide{
+      position:absolute; inset:0;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      transition: opacity 1200ms ease;
+      transform: scale(1.03);
+    }
+    .hero-slide.active{opacity:1}
+    .hero-overlay{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(to top, rgba(7,8,9,.92) 0%, rgba(7,8,9,.35) 55%, rgba(7,8,9,.25) 100%),
+        radial-gradient(900px 600px at 20% 30%, rgba(0,0,0,.55), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-content{
+      position:relative;
+      height:100%;
+      display:flex;
+      align-items:flex-end;
+      padding:120px 0 70px;
+    }
+    .hero-card{
+      width:min(780px, 100%);
+      padding:22px 22px 18px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: rgba(0,0,0,.30);
+      box-shadow: 0 20px 60px var(--shadow);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.06;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--fg);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .btn:hover{background:rgba(255,255,255,.10)}
+    .btn.primary{
+      background:rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.18);
+    }
+
+    /* Sections */
+    section{padding:74px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
+      margin-bottom:18px;
+    }
+    .kicker{
+      font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+      margin:0 0 8px;
+    }
+    h2{
+      margin:0;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing:-.01em;
+    }
+    .hint{color:var(--muted); font-size:13px; line-height:1.55; max-width:520px}
+
+    /* Grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .tile{
+      position:relative;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      min-height:220px;
+      cursor:pointer;
+      transform: translateZ(0);
+    }
+    .tile img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display
 </section>
 
 <section class="section about">
