@@ -243,31 +243,47 @@ document.addEventListener("DOMContentLoaded", function() {
     appearOnScroll.observe(fader);
   });
 
-  // 2️⃣ Hero slider script
-  const slides = document.querySelectorAll('.hero-bg');
-  let currentSlide = 0;
+ <script>
+    // Fade-in script
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (i === index) slide.classList.add('active');
-    });
-  }
+    // Hero slider script
+    const slides = document.querySelectorAll('.hero-bg');
+    let currentSlide = 0;
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
     showSlide(currentSlide);
-  }
+    setInterval(nextSlide, 5000);
+  </script>
 
-  showSlide(currentSlide);
-  setInterval(nextSlide, 5000);
-});
-</script>
-<section style="padding:80px;text-align:center;">
-  <h2>Portfolio</h2>
+  <section style="padding:80px 20px; text-align:center;">
+    <h2 style="margin:0 0 24px;">Portfolio</h2>
+    <img
+      src="images/rennende-vrouw.jpg"
+      alt="Rennende vrouw"
+      style="max-width:900px;width:100%;border-radius:12px;"
+    >
+  </section>
 
-  <img src="images/rennende-vrouw.jpg" 
-       style="max-width:900px;width:100%;border-radius:12px;">
-</section>
 </body>
 </html>
