@@ -207,3 +207,7 @@ body::after {
   z-index: 2;
   text-align: center;
 }
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
