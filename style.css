@@ -282,28 +282,18 @@ transform:scale(1.03);
   justify-content:center;
   z-index:99999;
   overflow:hidden;
+  padding:2vw;  
 }
 .lightbox img{
   display:block;
-  margin:auto;
-  max-width:92vw;
-  max-height:92vh;
+  width:auto;
+  height:auto;
+  max-width:calc(100vw - 4vw);
+  max-height:calc(100vh - 4vh);
   object-fit:contain;
-  padding:5vw;
-  background:#000;
-  box-sizing:border-box;
 }
 .lightbox:target{
   display:flex;
-}
-
-.lightbox img{
-  width:auto;
-  height:auto;
-  max-width:80vw;
-  max-height:80vh;
-  object-fit:contain;
-  box-shadow:0 0 50px rgba(0,0,0,0.8);
 }
 
 .lightbox-close{
