@@ -316,3 +316,30 @@ footer{
 .lightbox-next{
   right:20px;
 }
+.lightbox img{
+  transition:opacity .18s ease;
+}
+
+.lightbox-image-active{
+  opacity:1;
+}
+
+.lightbox-image-fade{
+  opacity:.15;
+}
+
+@media (max-width: 768px){
+  .lightbox-prev,
+  .lightbox-next{
+    font-size:44px;
+    padding:14px;
+  }
+
+  .lightbox-prev{
+    left:8px;
+  }
+
+  .lightbox-next{
+    right:8px;
+  }
+}
