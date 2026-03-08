@@ -29,12 +29,17 @@ h1, h2, h3 {
     margin-top: 40px;
 }
 
-.grid img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    filter: grayscale(20%);
-    transition: 0.4s ease;
+.grid img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: grayscale(15%);
+}
+
+.grid img:hover{
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
 .grid img:hover {
@@ -132,24 +137,24 @@ body::after {
     opacity:0;
     transform:scale(1);
   }
-  8%{
+
+  5%{
     opacity:1;
-   
   }
-  25%{
+
+  35%{
     opacity:1;
-  
   }
-  33.333%{
+
+  45%{
     opacity:0;
-    transform:scale(1.015);
   }
+
   100%{
     opacity:0;
-    transform:scale(1.03);
+    transform:scale(1.02);
   }
 }
-
 .overlay{
   position:absolute;
   inset:0;
