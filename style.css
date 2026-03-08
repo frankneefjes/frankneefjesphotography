@@ -111,19 +111,19 @@ body::after {
   background-position:center;
   opacity:0;
   transform:scale(1);
-  animation: heroFade 18s infinite;
+  animation:heroFade 18s infinite;
 }
 
-.hero-bg:nth-child(1){
-  animation-delay: 0s;
+.hero-bg:nth-of-type(1){
+  animation-delay:0s;
 }
 
-.hero-bg:nth-child(2){
-  animation-delay: 6s;
+.hero-bg:nth-of-type(2){
+  animation-delay:6s;
 }
 
-.hero-bg:nth-child(3){
-  animation-delay: 12s;
+.hero-bg:nth-of-type(3){
+  animation-delay:12s;
 }
 
 @keyframes heroFade{
@@ -131,15 +131,15 @@ body::after {
     opacity:0;
     transform:scale(1);
   }
-  8%{
+  5%{
     opacity:1;
-    transform:scale(1.03);
+    transform:scale(1.02);
   }
   28%{
     opacity:1;
     transform:scale(1.08);
   }
-  36%{
+  33%{
     opacity:0;
     transform:scale(1.1);
   }
