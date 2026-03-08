@@ -235,6 +235,23 @@ document.addEventListener("DOMContentLoaded", function() {
     style="max-width:900px;width:100%;border-radius:12px;display:block;margin:0 auto;"
   >
 </section>
+    <script>
+
+const heroSlides = document.querySelectorAll('.hero-bg');
+let heroIndex = 0;
+
+function showHeroSlide(index) {
+  heroSlides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+setInterval(() => {
+  heroIndex = (heroIndex + 1) % heroSlides.length;
+  showHeroSlide(heroIndex);
+}, 4000);
+
+</script>
 </body>
 </html>
 .hero{
