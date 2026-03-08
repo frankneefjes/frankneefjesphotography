@@ -289,7 +289,7 @@ transform:scale(1.03);
   max-width:92vw;
   max-height:92vh;
   object-fit:contain;
-  padding:3vw;
+  padding:5vw;
   background:#000;
   box-sizing:border-box;
 }
