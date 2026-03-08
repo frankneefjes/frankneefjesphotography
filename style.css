@@ -343,3 +343,20 @@ footer{
     right:8px;
   }
 }
+.lightbox img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:calc(100vw - 4vw);
+  max-height:calc(100vh - 4vh);
+  object-fit:contain;
+  transition:opacity .22s ease;
+}
+
+.lightbox-image-active{
+  opacity:1;
+}
+
+.lightbox-image-fade{
+  opacity:.55;
+}
