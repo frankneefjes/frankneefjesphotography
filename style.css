@@ -286,9 +286,12 @@ transform:scale(1.03);
 .lightbox img{
   display:block;
   margin:auto;
-  max-width:80vw;
-  max-height:80vh;
+  max-width:92vw;
+  max-height:92vh;
   object-fit:contain;
+  padding:3cm;
+  background:#000;
+  box-sizing:border-box;
 }
 .lightbox:target{
   display:flex;
