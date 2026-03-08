@@ -285,8 +285,11 @@ transform:scale(1.03);
 }
 
 .lightbox img{
-  max-width:92vw;
-  max-height:92vh;
+  width:auto;
+  height:auto;
+  max-width:80vw;
+  max-height:80vh;
+  object-fit:contain;
   box-shadow:0 0 50px rgba(0,0,0,0.8);
 }
 
