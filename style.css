@@ -211,3 +211,23 @@ html, body {
   height: auto !important;
   overflow-y: auto !important;
 }
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:18px;
+max-width:1200px;
+margin:40px auto 0;
+}
+
+.portfolio-grid img{
+width:100%;
+display:block;
+border-radius:14px;
+object-fit:cover;
+transition:transform .35s ease, opacity .35s ease;
+}
+
+.portfolio-grid img:hover{
+transform:scale(1.02);
+opacity:.96;
+}
