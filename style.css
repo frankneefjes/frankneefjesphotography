@@ -272,14 +272,24 @@ transform:scale(1.03);
 }
 .lightbox{
   position:fixed;
-  inset:0;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
   background:rgba(0,0,0,0.96);
   display:none;
   align-items:center;
   justify-content:center;
   z-index:99999;
+  overflow:hidden;
 }
-
+.lightbox img{
+  display:block;
+  margin:auto;
+  max-width:80vw;
+  max-height:80vh;
+  object-fit:contain;
+}
 .lightbox:target{
   display:flex;
 }
