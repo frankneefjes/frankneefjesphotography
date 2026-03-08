@@ -325,67 +325,120 @@ document.addEventListener("DOMContentLoaded", function() {
   <a href="20-dargavs-mountains.jpg"><img src="20-dargavs-mountains.jpg"></a>
 </div>
 </section>
-<script id="portfolio-navigation">
-document.addEventListener("DOMContentLoaded", function(){
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-const images = document.querySelectorAll(".portfolio-grid a");
-let currentIndex = -1;
+  const images = document.querySelectorAll(".portfolio-grid a");
+  let currentIndex = 0;
+  let overlay, img, prev, next;
+  let touchStartX = 0;
+  let touchEndX = 0;
 
-function openLightbox(index){
+  function openLightbox(index){
     currentIndex = index;
 
-    const overlay = document.createElement("div");
+    overlay = document.createElement("div");
     overlay.className = "lightbox";
-
-    const img = document.createElement("img");
-    img.src = images[index].href;
-
-    overlay.appendChild(img);
-    document.body.appendChild(overlay);
-
     overlay.style.display = "flex";
 
-    overlay.addEventListener("click", () => overlay.remove());
+    img = document.createElement("img");
+    img.src = images[currentIndex].href;
+    img.className = "lightbox-image-active";
+
+    prev = document.createElement("div");
+    prev.className = "lightbox-prev";
+    prev.innerHTML = "&#10094;";
+
+    next = document.createElement("div");
+    next.className = "lightbox-next";
+    next.innerHTML = "&#10095;";
+
+    overlay.appendChild(prev);
+    overlay.appendChild(img);
+    overlay.appendChild(next);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener("click", closeLightbox);
+    img.addEventListener("click", function(e){
+      e.stopPropagation();
+    });
+
+    prev.addEventListener("click", function(e){
+      e.stopPropagation();
+      showPrev();
+    });
+
+    next.addEventListener("click", function(e){
+      e.stopPropagation();
+      showNext();
+    });
 
     document.addEventListener("keydown", keyHandler);
 
-    function keyHandler(e){
+    overlay.addEventListener("touchstart", function(e){
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive:true });
 
-        if(e.key === "Escape"){
-            overlay.remove();
-            document.removeEventListener("keydown", keyHandler);
-        }
+    overlay.addEventListener("touchend", function(e){
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive:true });
+  }
 
-        if(e.key === "ArrowRight"){
-            nextImage();
-        }
+  function closeLightbox(){
+    document.removeEventListener("keydown", keyHandler);
+    if (overlay) overlay.remove();
+  }
 
-        if(e.key === "ArrowLeft"){
-            prevImage();
-        }
+  function changeImage(newIndex){
+    currentIndex = newIndex;
 
+    img.classList.remove("lightbox-image-active");
+    img.classList.add("lightbox-image-fade");
+
+    setTimeout(() => {
+      img.src = images[currentIndex].href;
+      img.classList.remove("lightbox-image-fade");
+      img.classList.add("lightbox-image-active");
+    }, 160);
+  }
+
+  function showNext(){
+    let nextIndex = currentIndex + 1;
+    if(nextIndex >= images.length) nextIndex = 0;
+    changeImage(nextIndex);
+  }
+
+  function showPrev(){
+    let prevIndex = currentIndex - 1;
+    if(prevIndex < 0) prevIndex = images.length - 1;
+    changeImage(prevIndex);
+  }
+
+  function keyHandler(e){
+    if(e.key === "ArrowRight") showNext();
+    if(e.key === "ArrowLeft") showPrev();
+    if(e.key === "Escape") closeLightbox();
+  }
+
+  function handleSwipe(){
+    const diff = touchEndX - touchStartX;
+
+    if (Math.abs(diff) < 40) return;
+
+    if (diff < 0) {
+      showNext();
+    } else {
+      showPrev();
     }
+  }
 
-    function nextImage(){
-        currentIndex++;
-        if(currentIndex >= images.length) currentIndex = 0;
-        img.src = images[currentIndex].href;
-    }
-
-    function prevImage(){
-        currentIndex--;
-        if(currentIndex < 0) currentIndex = images.length - 1;
-        img.src = images[currentIndex].href;
-    }
-
-}
-
-images.forEach((link,index)=>{
+  images.forEach((link, index) => {
     link.addEventListener("click", function(e){
-        e.preventDefault();
-        openLightbox(index);
+      e.preventDefault();
+      openLightbox(index);
     });
-});
+  });
 
 });
 </script>
