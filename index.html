@@ -206,37 +206,36 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }, appearOptions);
     faders.forEach(fader => appearOnScroll.observe(fader));
+<section id="portfolio">
+<h2>Portfolio</h2>
 
-    // Hero slider script
-    const slides = document.querySelectorAll('.hero-bg');
-    let currentSlide = 0;
+<div class="portfolio-grid">
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
-      });
-    }
+<img src="01-running-woman-dust.jpg">
+<img src="02-afghanistan-sunrise.jpg">
+<img src="03-iran-mosque-colour.jpg">
+<img src="04-afghanistan-woman-child-road.jpg">
+<img src="05-lake-bulunkul.jpg">
+<img src="06-nomad-man-ladakh.jpg">
+<img src="07-beachhotel-northkorea.jpg">
+<img src="08-women-afghanistan.jpg">
+<img src="09-hindukush-mountains.jpg">
+<img src="10-nomad-woman.jpg">
+<img src="11-temple-candles-ladakh.jpg">
+<img src="12-three-novices-monks.jpg">
+<img src="13-turtuk-autumn-valley.jpg">
+<img src="14-monk-drum.jpg">
+<img src="15-girl-kashmir.jpg">
+<img src="16-autumn-trees-turtuk.jpg">
+<img src="17-kashmir-family.jpg">
+<img src="18-massgames-northkorea.jpg">
+<img src="19-mosque-balloons.jpg">
+<img src="20-dargavs-mountains.jpg">
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    showSlide(currentSlide);
-    setInterval(nextSlide, 5000);
-  </script>
-
-  <section id="portfolio" style="padding:80px 20px; text-align:center;">
-  <h2 style="margin:0 0 24px;">Portfolio</h2>
-  <img
-    src="01-running-woman-dust.jpg"
-    alt="Rennende vrouw"
-    style="max-width:900px;width:100%;border-radius:12px;display:block;margin:0 auto;"
-  >
+</div>
 </section>
-    <script>
 
+<script>
 const heroSlides = document.querySelectorAll('.hero-bg');
 let heroIndex = 0;
 
@@ -250,7 +249,6 @@ setInterval(() => {
   heroIndex = (heroIndex + 1) % heroSlides.length;
   showHeroSlide(heroIndex);
 }, 4000);
-
 </script>
 </body>
 </html>
