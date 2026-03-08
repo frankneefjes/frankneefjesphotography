@@ -15,7 +15,7 @@
 <body>
 
 <header class="hero">
-  <div class="hero-bg active" style="background-image: url('01-running-woman-dust.jpg');"></div>
+  <div class="hero-bg" style="background-image: url('01-running-woman-dust.jpg');"></div>
   <div class="hero-bg" style="background-image: url('02-afghanistan-sunrise.jpg');"></div>
   <div class="hero-bg" style="background-image: url('14-monk-drum.jpg');"></div>
 
@@ -225,20 +225,5 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 </section>
 
-<script>
-const heroSlides = document.querySelectorAll('.hero-bg');
-let heroIndex = 0;
-
-function showHeroSlide(index) {
-  heroSlides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
-}
-
-setInterval(() => {
-  heroIndex = (heroIndex + 1) % heroSlides.length;
-  showHeroSlide(heroIndex);
-}, 4000);
-</script>
 </body>
 </html>
