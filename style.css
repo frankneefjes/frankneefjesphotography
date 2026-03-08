@@ -119,11 +119,11 @@ body::after {
 }
 
 .hero-bg:nth-of-type(2){
-  animation-delay:6s;
+  animation-delay:4s;
 }
 
 .hero-bg:nth-of-type(3){
-  animation-delay:12s;
+  animation-delay:8s;
 }
 
 @keyframes heroFade{
@@ -131,21 +131,21 @@ body::after {
     opacity:0;
     transform:scale(1);
   }
-  5%{
+  8%{
+    opacity:1;
+    transform:scale(1.01);
+  }
+  25%{
     opacity:1;
     transform:scale(1.02);
   }
-  28%{
-    opacity:1;
-    transform:scale(1.03);
-  }
-  33%{
+  33.333%{
     opacity:0;
-    transform:scale(1.04);
+    transform:scale(1.03);
   }
   100%{
     opacity:0;
-    transform:scale(1.1);
+    transform:scale(1.03);
   }
 }
 
