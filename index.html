@@ -260,39 +260,5 @@ document.querySelectorAll('.portfolio-grid a').forEach(link => {
   });
 });
 </script>
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      const overlay = document.createElement('div');
-      overlay.style.position = 'fixed';
-      overlay.style.inset = '0';
-      overlay.style.background = 'rgba(0,0,0,0.95)';
-      overlay.style.display = 'flex';
-      overlay.style.alignItems = 'center';
-      overlay.style.justifyContent = 'center';
-      overlay.style.zIndex = '9999';
-      overlay.style.cursor = 'pointer';
-
-      const img = document.createElement('img');
-      img.src = this.href;
-      img.style.maxWidth = '92%';
-      img.style.maxHeight = '92%';
-      img.style.boxShadow = '0 0 60px rgba(0,0,0,0.8)';
-      img.style.cursor = 'default';
-
-      img.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-
-      overlay.addEventListener('click', () => {
-        overlay.remove();
-      });
-
-      overlay.appendChild(img);
-      document.body.appendChild(overlay);
-    });
-  });
-});
-</script>    
 </body>
 </html>
