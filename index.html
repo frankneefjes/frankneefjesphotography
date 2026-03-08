@@ -325,6 +325,7 @@ document.addEventListener("DOMContentLoaded", function() {
   <a href="20-dargavs-mountains.jpg"><img src="20-dargavs-mountains.jpg"></a>
 </div>
 </section>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -359,8 +360,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
 
     overlay.addEventListener("click", closeLightbox);
+
     img.addEventListener("click", function(e){
       e.stopPropagation();
+
+      const rect = img.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+
+      if (clickX < rect.width / 2) {
+        showPrev();
+      } else {
+        showNext();
+      }
     });
 
     prev.addEventListener("click", function(e){
@@ -398,9 +409,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(() => {
       img.src = images[currentIndex].href;
-      img.classList.remove("lightbox-image-fade");
-      img.classList.add("lightbox-image-active");
-    }, 160);
+
+      img.onload = function(){
+        img.classList.remove("lightbox-image-fade");
+        img.classList.add("lightbox-image-active");
+      };
+    }, 120);
   }
 
   function showNext(){
@@ -423,7 +437,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleSwipe(){
     const diff = touchEndX - touchStartX;
-
     if (Math.abs(diff) < 40) return;
 
     if (diff < 0) {
@@ -442,7 +455,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 </body>
 </html>
 
