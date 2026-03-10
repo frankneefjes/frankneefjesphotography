@@ -63,7 +63,7 @@ section{
   background-position:center 40%;
   opacity:0;
   transform:scale(1);
-  animation:heroFade 12s infinite;
+  animation:heroFade 4,5s infinite;
 }
 
 .hero-bg:nth-of-type(1){
