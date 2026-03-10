@@ -55,7 +55,12 @@ section{
   text-align:center;
   color:white;
 }
-
+@media (max-width:768px){
+  .hero{
+    height:85vh;
+    min-height:500px;
+  }
+}
 .hero-bg{
   position:absolute;
   inset:0;
