@@ -60,7 +60,7 @@ section{
   position:absolute;
   inset:0;
   background-size:cover;
-  background-position:center 40%;
+  background-position:center;
   opacity:0;
   transform:scale(1);
   animation:heroFade 6s infinite;
