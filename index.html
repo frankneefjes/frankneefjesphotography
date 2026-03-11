@@ -14,10 +14,9 @@
 <body>
 
   <header class="hero">
-<div class="hero-bg" style="background-image:url('iran-mother-child.jpg');"></div>
 <div class="hero-bg" style="background-image:url('01-running-woman-dust.jpg');"></div>
 <div class="hero-bg" style="background-image:url('north-korea-railway-crossing.jpg');"></div>
-
+<div class="hero-bg" style="background-image:url('iran-mother-child.jpg');"></div>
 
     <div class="overlay"></div>
 
@@ -31,73 +30,312 @@
   <section id="portfolio">
     <h2>Portfolio</h2>
 
- <div class="portfolio-grid">
-
-<a class="featured" href="iran-mother-child.jpg">
-<img src="iran-mother-child.jpg" alt="Mother and child Iran">
-</a>
-
-<a class="featured" href="01-running-woman-dust.jpg">
-<img src="01-running-woman-dust.jpg" alt="Running woman in dust">
-</a>
-
-<a class="featured" href="north-korea-railway-crossing.jpg">
-<img src="north-korea-railway-crossing.jpg" alt="Railway crossing North Korea">
-</a>
-
-<a href="tibet-woman-fur-hat.jpg"><img src="tibet-woman-fur-hat.jpg" alt="Tibetan woman with fur hat"></a>
-
-<a href="02-afghanistan-sunrise.jpg"><img src="02-afghanistan-sunrise.jpg" alt="Afghanistan sunrise"></a>
-
+    <div class="portfolio-grid">
+      <a href="01-running-woman-dust.jpg"><img src="01-running-woman-dust.jpg" alt="Running woman in dust"></a
+<a href="north-korea-railway-crossing.jpg"><img src="north-korea-railway-crossing.jpg" alt="Railway crossing North Korea"></a>
+      <a href="tibet-woman-fur-hat.jpg"><img src="tibet-woman-fur-hat.jpg" alt="Tibetan woman with fur hat"></a>
+ <a href="02-afghanistan-sunrise.jpg"><img src="02-afghanistan-sunrise.jpg" alt="Afghanistan sunrise"></a>
 <a href="tibet-travelers-cart.jpg"><img src="tibet-travelers-cart.jpg" alt="Travelers transporting goods in Tibet"></a>
-
-<a href="anniversary-70-year-peoples-republic-china.jpg"><img src="anniversary-70-year-peoples-republic-china.jpg" alt="70 year anniversary China"></a>
-
-<a href="03-iran-mosque-colour.jpg"><img src="03-iran-mosque-colour.jpg" alt="Iran mosque colour"></a>
-
-<a href="04-afghanistan-woman-child-road.jpg"><img src="04-afghanistan-woman-child-road.jpg" alt="Afghanistan woman and child"></a>
-
-<a href="06-nomad-man-ladakh.jpg"><img src="06-nomad-man-ladakh.jpg" alt="Nomad man Ladakh"></a>
-
-<a href="08-women-afghanistan.jpg"><img src="08-women-afghanistan.jpg" alt="Women Afghanistan"></a>
-
-<a href="09-hindukush-mountains.jpg"><img src="09-hindukush-mountains.jpg" alt="Hindukush mountains"></a>
-
-<a href="10-nomad-woman.jpg"><img src="10-nomad-woman.jpg" alt="Nomad woman"></a>
-
-<a href="12-three-novices-monks.jpg"><img src="12-three-novices-monks.jpg" alt="Three novice monks"></a>
-
-<a href="14-monk-drum.jpg"><img src="14-monk-drum.jpg" alt="Monk with drum"></a>
-
-<a href="15-girl-kashmir.jpg"><img src="15-girl-kashmir.jpg" alt="Girl in Kashmir"></a>
-
-<a href="19-mosque-balloons.jpg"><img src="19-mosque-balloons.jpg" alt="Mosque balloons"></a>
-
-<a href="20-dargavs-mountains.jpg"><img src="20-dargavs-mountains.jpg" alt="Dargavs mountains"></a>
-
-</div>
+      <a href="anniversary-70-year-peoples-republic-china.jpg"><img src="anniversary-70-year-peoples-republic-china.jpg" alt="70 year anniversary People's Republic of China"></a>
+      <a href="03-iran-mosque-colour.jpg"><img src="03-iran-mosque-colour.jpg" alt="Iran mosque colour"></a>
+      <a href="04-afghanistan-woman-child-road.jpg"><img src="04-afghanistan-woman-child-road.jpg" alt="Afghanistan woman and child on road"></a>
+      <a href="06-nomad-man-ladakh.jpg"><img src="06-nomad-man-ladakh.jpg" alt="Nomad man in Ladakh"></a>
+      <a href="07-beachhotel-northkorea.jpg"><img src="07-beachhotel-northkorea.jpg" alt="Beach hotel in North Korea"></a>
+      <a href="08-women-afghanistan.jpg"><img src="08-women-afghanistan.jpg" alt="Women in Afghanistan"></a>
+      <a href="09-hindukush-mountains.jpg"><img src="09-hindukush-mountains.jpg" alt="Hindukush mountains"></a>
+      <a href="10-nomad-woman.jpg"><img src="10-nomad-woman.jpg" alt="Nomad woman"></a>
+      <a href="12-three-novices-monks.jpg"><img src="12-three-novices-monks.jpg" alt="Three novice monks"></a>
+      <a href="14-monk-drum.jpg"><img src="14-monk-drum.jpg" alt="Monk with drum"></a>
+      <a href="15-girl-kashmir.jpg"><img src="15-girl-kashmir.jpg" alt="Girl in Kashmir"></a>
+      <a href="19-mosque-balloons.jpg"><img src="19-mosque-balloons.jpg" alt="Mosque with balloons"></a>
+      <a href="iran-mother-child.jpg"><img src="iran-mother-child.jpg" alt="Mother and child Iran></a>
      
+    </div>
   </section>
 
   <section class="section contact" id="contact">
     <h2>Contact</h2>
     <p>For editorial, documentary, print or collaboration enquiries, feel free to get in touch.</p>
-    <p><a href="mailto:frankneefjes@proton.me">frankneefjes@proton.me</a></p>
+    <p><a href="mailto:top94058@hotmail.com">top94058@hotmail.com</a></p>
   </section>
 
   <footer>
     <p>© 2026 Frank Neefjes Photography. All rights reserved.</p>
   </footer>
 
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const images = document.querySelectorAll(".portfolio-grid a");
+  let currentIndex = 0;
+  let overlay, img;
+
+  function openLightbox(index){
+    currentIndex = index;
+
+    overlay = document.createElement("div");
+    overlay.className = "lightbox";
+    overlay.style.display = "flex";
+
+    img = document.createElement("img");
+    img.src = images[currentIndex].href;
+
+    const prev = document.createElement("div");
+    prev.className = "lightbox-prev";
+    prev.innerHTML = "&#10094;";
+
+    const next = document.createElement("div");
+    next.className = "lightbox-next";
+    next.innerHTML = "&#10095;";
+
+    overlay.appendChild(prev);
+    overlay.appendChild(img);
+    overlay.appendChild(next);
+
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener("click", closeLightbox);
+    img.addEventListener("click", e => e.stopPropagation());
+
+    prev.addEventListener("click", function(e){
+      e.stopPropagation();
+      showPrev();
+    });
+
+    next.addEventListener("click", function(e){
+      e.stopPropagation();
+      showNext();
+    });
+
+    document.addEventListener("keydown", keyHandler);
+  }
+
+  function closeLightbox(){
+    document.removeEventListener("keydown", keyHandler);
+    overlay.remove();
+  }
+
+  function showNext(){
+    currentIndex++;
+    if(currentIndex >= images.length) currentIndex = 0;
+    img.src = images[currentIndex].href;
+  }
+
+  function showPrev(){
+    currentIndex--;
+    if(currentIndex < 0) currentIndex = images.length - 1;
+    img.src = images[currentIndex].href;
+  }
+
+  function keyHandler(e){
+    if(e.key === "ArrowRight") showNext();
+    if(e.key === "ArrowLeft") showPrev();
+    if(e.key === "Escape") closeLightbox();
+  }
+
+  images.forEach((link, index) => {
+    link.addEventListener("click", function(e){
+      e.preventDefault();
+      openLightbox(index);
+    });
+  });
+
+});
+</script>
+
+</body>
+</html><div id="img8" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="08-women-afghanistan.jpg"></div>
+<div id="img9" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="09-hindukush-mountains.jpg"></div>
+<div id="img10" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="10-nomad-woman.jpg"></div>
+<div id="img11" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="11-temple-candles-ladakh.jpg"></div>
+<div id="img12" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="12-three-novices-monks.jpg"></div>
+<div id="img13" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="13-turtuk-autumn-valley.jpg"></div>
+<div id="img14" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="14-monk-drum.jpg"></div>
+<div id="img15" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="15-girl-kashmir.jpg"></div>
+<div id="img16" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="16-autumn-trees-turtuk.jpg"></div>
+<div id="img17" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="17-kashmir-family.jpg"></div>
+<div id="img18" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="18-massgames-northkorea.jpg"></div>
+<div id="img19" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="19-mosque-balloons.jpg"></div>
+<div id="img20" class="lightbox"><a href="#" class="lightbox-close">×</a><img src="20-dargavs-mountains.jpg"></div>
+</section>
+
+  <style>
+    :root{
+      --bg:#070809;
+      --fg:#e9ecef;
+      --muted:#a9b0b7;
+      --line:rgba(255,255,255,.10);
+      --shadow:rgba(0,0,0,.55);
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--fg);
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(255,255,255,.06), transparent 55%),
+                  radial-gradient(1000px 700px at 80% 20%, rgba(255,255,255,.04), transparent 60%),
+                  var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Header */
+    header{
+      position:fixed; inset:0 0 auto 0;
+      z-index:50;
+      background: linear-gradient(to bottom, rgba(7,8,9,.85), rgba(7,8,9,.35), transparent);
+      backdrop-filter: blur(8px);
+    }
+    .nav{
+      height:64px; display:flex; align-items:center; justify-content:space-between;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      font-size:12px;
+    }
+    .brand span{color:var(--muted); font-weight:600}
+    .menu{
+      display:flex; gap:18px; align-items:center; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--muted);
+    }
+    .menu a{padding:10px 8px; border-radius:999px}
+    .menu a:hover{color:var(--fg); background:rgba(255,255,255,.06)}
+
+    /* Sections */
+    section{padding:74px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
+      margin-bottom:18px;
+    }
+    .kicker{
+      font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+      margin:0 0 8px;
+    }
+    h2{
+      margin:0;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing:-.01em;
+    }
+    .hint{color:var(--muted); font-size:13px; line-height:1.55; max-width:520px}
+
+    /* Grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .tile{
+      position:relative;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      min-height:220px;
+      cursor:pointer;
+      transform: translateZ(0);
+    }
+    .tile img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display
+</section>
+
+<section class="section about">
+    <h2>I Travel Alone</h2>
+    <p>
+        I travel alone to experience places without filters. 
+        To connect with people, cultures and landscapes in their purest form.
+        My photography is about silence, distance and human stories.
+    </p>
+</section>
+
+<section class="section prints">
+    <h2>Fine Art Prints</h2>
+    <p>Selected works available as museum-quality prints.</p>
+    <a href="#" class="btn">Coming Soon</a>
+</section>
+
+<section class="section stories">
+    <h2>Travel Stories</h2>
+    <p>Long-form visual stories from Ladakh, Kashmir and beyond.</p>
+    <a href="#" class="btn">Read Stories</a>
+</section>
+
+<section class="section contact">
+    <h2>Contact</h2>
+    <p>Available for assignments & collaborations.</p>
+    <p>Email: top94058@hotmail.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Frank Neefjes Photography</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // 1️⃣ Fade-in script
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.2
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+  });
+ 
+    
+<section id="portfolio">
+<h2>Portfolio</h2>
+
+<div class="portfolio-grid">
+  <a href="01-running-woman-dust.jpg"><img src="01-running-woman-dust.jpg"></a>
+  <a href="02-afghanistan-sunrise.jpg"><img src="02-afghanistan-sunrise.jpg"></a>
+  <a href="03-iran-mosque-colour.jpg"><img src="03-iran-mosque-colour.jpg"></a>
+  <a href="04-afghanistan-woman-child-road.jpg"><img src="04-afghanistan-woman-child-road.jpg"></a>
+  <a href="05-lake-bulunkul.jpg"><img src="05-lake-bulunkul.jpg"></a>
+  <a href="06-nomad-man-ladakh.jpg"><img src="06-nomad-man-ladakh.jpg"></a>
+  <a href="07-beachhotel-northkorea.jpg"><img src="07-beachhotel-northkorea.jpg"></a>
+  <a href="08-women-afghanistan.jpg"><img src="08-women-afghanistan.jpg"></a>
+  <a href="09-hindukush-mountains.jpg"><img src="09-hindukush-mountains.jpg"></a>
+  <a href="10-nomad-woman.jpg"><img src="10-nomad-woman.jpg"></a>
+  <a href="11-temple-candles-ladakh.jpg"><img src="11-temple-candles-ladakh.jpg"></a>
+  <a href="12-three-novices-monks.jpg"><img src="12-three-novices-monks.jpg"></a>
+  <a href="13-turtuk-autumn-valley.jpg"><img src="13-turtuk-autumn-valley.jpg"></a>
+  <a href="14-monk-drum.jpg"><img src="14-monk-drum.jpg"></a>
+  <a href="15-girl-kashmir.jpg"><img src="15-girl-kashmir.jpg"></a>
+  <a href="16-autumn-trees-turtuk.jpg"><img src="16-autumn-trees-turtuk.jpg"></a>
+  <a href="17-kashmir-family.jpg"><img src="17-kashmir-family.jpg"></a>
+  <a href="18-massgames-northkorea.jpg"><img src="18-massgames-northkorea.jpg"></a>
+  <a href="19-mosque-balloons.jpg"><img src="19-mosque-balloons.jpg"></a>
+  <a href="20-dargavs-mountains.jpg"><img src="20-dargavs-mountains.jpg"></a>
+</div>
+</section>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
   const images = document.querySelectorAll(".portfolio-grid a");
   let currentIndex = 0;
   let overlay, img, prev, next;
   let touchStartX = 0;
   let touchEndX = 0;
 
-  function openLightbox(index) {
+  function openLightbox(index){
     currentIndex = index;
 
     overlay = document.createElement("div");
@@ -121,15 +359,9 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.appendChild(next);
     document.body.appendChild(overlay);
 
-    // Sluiten alleen als je op de donkere achtergrond tikt
-    overlay.addEventListener("click", function (e) {
-      if (e.target === overlay) {
-        closeLightbox();
-      }
-    });
+    overlay.addEventListener("click", closeLightbox);
 
-    // Klik op afbeelding: links vorige, rechts volgende
-    img.addEventListener("click", function (e) {
+    img.addEventListener("click", function(e){
       e.stopPropagation();
 
       const rect = img.getBoundingClientRect();
@@ -142,35 +374,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    prev.addEventListener("click", function (e) {
+    prev.addEventListener("click", function(e){
       e.stopPropagation();
       showPrev();
     });
 
-    next.addEventListener("click", function (e) {
+    next.addEventListener("click", function(e){
       e.stopPropagation();
       showNext();
     });
 
     document.addEventListener("keydown", keyHandler);
 
-    // Swipe op de hele lightbox
-    overlay.addEventListener("touchstart", function (e) {
+    overlay.addEventListener("touchstart", function(e){
       touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+    }, { passive:true });
 
-    overlay.addEventListener("touchend", function (e) {
+    overlay.addEventListener("touchend", function(e){
       touchEndX = e.changedTouches[0].screenX;
       handleSwipe();
-    }, { passive: true });
+    }, { passive:true });
   }
 
-  function closeLightbox() {
+  function closeLightbox(){
     document.removeEventListener("keydown", keyHandler);
     if (overlay) overlay.remove();
   }
 
-  function changeImage(newIndex) {
+  function changeImage(newIndex){
     currentIndex = newIndex;
 
     img.classList.remove("lightbox-image-active");
@@ -179,35 +410,34 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       img.src = images[currentIndex].href;
 
-      img.onload = function () {
+      img.onload = function(){
         img.classList.remove("lightbox-image-fade");
         img.classList.add("lightbox-image-active");
       };
     }, 120);
   }
 
-  function showNext() {
+  function showNext(){
     let nextIndex = currentIndex + 1;
-    if (nextIndex >= images.length) nextIndex = 0;
+    if(nextIndex >= images.length) nextIndex = 0;
     changeImage(nextIndex);
   }
 
-  function showPrev() {
+  function showPrev(){
     let prevIndex = currentIndex - 1;
-    if (prevIndex < 0) prevIndex = images.length - 1;
+    if(prevIndex < 0) prevIndex = images.length - 1;
     changeImage(prevIndex);
   }
 
-  function keyHandler(e) {
-    if (e.key === "ArrowRight") showNext();
-    if (e.key === "ArrowLeft") showPrev();
-    if (e.key === "Escape") closeLightbox();
+  function keyHandler(e){
+    if(e.key === "ArrowRight") showNext();
+    if(e.key === "ArrowLeft") showPrev();
+    if(e.key === "Escape") closeLightbox();
   }
 
-  function handleSwipe() {
+  function handleSwipe(){
     const diff = touchEndX - touchStartX;
-
-    if (Math.abs(diff) < 50) return;
+    if (Math.abs(diff) < 40) return;
 
     if (diff < 0) {
       showNext();
@@ -217,13 +447,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   images.forEach((link, index) => {
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", function(e){
       e.preventDefault();
       openLightbox(index);
     });
   });
+
 });
 </script>
-
 </body>
 </html>
