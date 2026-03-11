@@ -350,3 +350,33 @@ footer{
 .lightbox-image-fade{
   opacity:.55;
 }
+.lightbox{
+  touch-action: pan-y;
+}
+
+.lightbox img{
+  touch-action: pan-y;
+}
+@media (max-width: 768px) {
+  .hero{
+    min-height: 100svh;
+    height: 100svh;
+  }
+
+  .hero-bg{
+    background-position: center 25%;
+    background-size: cover;
+  }
+
+  .hero-content{
+    padding: 0 20px;
+  }
+
+  .hero-content h1{
+    font-size: 3rem;
+  }
+
+  .hero-content p{
+    font-size: 1.05rem;
+  }
+}
