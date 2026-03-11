@@ -460,3 +460,19 @@ background-position:center 25%;
 }
 
 }
+.featured img{
+width:100%;
+height:auto;
+}
+
+@media (min-width:768px){
+
+.portfolio-grid{
+grid-template-columns: repeat(3, 1fr);
+}
+
+.featured{
+grid-column: span 3;
+}
+
+}
