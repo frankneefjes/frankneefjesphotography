@@ -423,16 +423,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener("keydown", keyHandler);
+// Swipe werkt op de lightbox
+overlay.addEventListener("touchstart", function (e) {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
 
-    // Swipe werkt op de afbeelding
-    img.addEventListener("touchstart", function (e) {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    img.addEventListener("touchend", function (e) {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
+overlay.addEventListener("touchend", function (e) {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, { passive: true });
   }
 
   function closeLightbox() {
