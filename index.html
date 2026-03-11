@@ -359,61 +359,41 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.appendChild(next);
     document.body.appendChild(overlay);
 
-let moved = false;
+    overlay.addEventListener("click", closeLightbox);
 
-overlay.addEventListener("click", function(e){
-  if (!moved) closeLightbox();
-});
+    img.addEventListener("click", function(e){
+      e.stopPropagation();
 
-img.addEventListener("click", function(e){
-  e.stopPropagation();
+      const rect = img.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
 
-  const rect = img.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
+      if (clickX < rect.width / 2) {
+        showPrev();
+      } else {
+        showNext();
+      }
+    });
 
-  if (clickX < rect.width / 2) {
-    showPrev();
-  } else {
-    showNext();
-  }
-});
+    prev.addEventListener("click", function(e){
+      e.stopPropagation();
+      showPrev();
+    });
 
-prev.addEventListener("click", function(e){
-  e.stopPropagation();
-  showPrev();
-});
+    next.addEventListener("click", function(e){
+      e.stopPropagation();
+      showNext();
+    });
 
-next.addEventListener("click", function(e){
-  e.stopPropagation();
-  showNext();
-});
+    document.addEventListener("keydown", keyHandler);
 
-document.addEventListener("keydown", keyHandler);
+    overlay.addEventListener("touchstart", function(e){
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive:true });
 
-img.addEventListener("touchstart", function(e){
-  moved = false;
-  touchStartX = e.changedTouches[0].screenX;
-}, { passive:true });
-
-img.addEventListener("touchmove", function(e){
-  const currentX = e.changedTouches[0].screenX;
-  if (Math.abs(currentX - touchStartX) > 20) {
-    moved = true;
-  }
-}, { passive:true });
-
-img.addEventListener("touchend", function(e){
-  touchEndX = e.changedTouches[0].screenX;
-
-  if (Math.abs(touchEndX - touchStartX) > 40) {
-    handleSwipe();
-  }
-
-  setTimeout(function(){
-    moved = false;
-  }, 50);
-
-}, { passive:true });
+    overlay.addEventListener("touchend", function(e){
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive:true });
   }
 
   function closeLightbox(){
