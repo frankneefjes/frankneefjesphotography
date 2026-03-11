@@ -359,41 +359,60 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.appendChild(next);
     document.body.appendChild(overlay);
 
-    overlay.addEventListener("click", closeLightbox);
+let moved = false;
 
-    img.addEventListener("click", function(e){
-      e.stopPropagation();
+overlay.addEventListener("click", function(e){
+  if (!moved) closeLightbox();
+});
 
-      const rect = img.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
+img.addEventListener("click", function(e){
+  e.stopPropagation();
 
-      if (clickX < rect.width / 2) {
-        showPrev();
-      } else {
-        showNext();
-      }
-    });
+  const rect = img.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
 
-    prev.addEventListener("click", function(e){
-      e.stopPropagation();
-      showPrev();
-    });
+  if (clickX < rect.width / 2) {
+    showPrev();
+  } else {
+    showNext();
+  }
+});
 
-    next.addEventListener("click", function(e){
-      e.stopPropagation();
-      showNext();
-    });
+prev.addEventListener("click", function(e){
+  e.stopPropagation();
+  showPrev();
+});
 
-    document.addEventListener("keydown", keyHandler);
+next.addEventListener("click", function(e){
+  e.stopPropagation();
+  showNext();
+});
 
-    overlay.addEventListener("touchstart", function(e){
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive:true });
+document.addEventListener("keydown", keyHandler);
 
-    overlay.addEventListener("touchend", function(e){
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive:true });
+overlay.addEventListener("touchstart", function(e){
+  moved = false;
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive:true });
+
+overlay.addEventListener("touchmove", function(e){
+  const currentX = e.changedTouches[0].screenX;
+  if (Math.abs(currentX - touchStartX) > 20) {
+    moved = true;
+  }
+}, { passive:true });
+
+overlay.addEventListener("touchend", function(e){
+  touchEndX = e.changedTouches[0].screenX;
+
+  if (Math.abs(touchEndX - touchStartX) > 40) {
+    handleSwipe();
+  }
+
+  setTimeout(function(){
+    moved = false;
+  }, 50);
+}, { passive:true });
   }
 
   function closeLightbox(){
