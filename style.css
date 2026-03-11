@@ -425,3 +425,6 @@ background-size: cover;
 }
 
 }
+.lightbox img {
+  touch-action: pan-y;
+}
