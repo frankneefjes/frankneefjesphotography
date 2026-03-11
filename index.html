@@ -360,39 +360,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const images = document.querySelectorAll(".portfolio-grid a");
   let currentIndex = 0;
   let overlay, img, prev, next;
+
   let touchStartX = 0;
   let touchEndX = 0;
-  let isSwiping = false;
-function handleSwipe(){
-  const swipeDistance = touchEndX - touchStartX;
 
-  if (Math.abs(swipeDistance) < 50) return;
-
-  if (swipeDistance < 0) {
-    nextImage();
-  } else {
-    prevImage();
-  }
-}
-  function openLightbox(index){
+  function openLightbox(index) {
     currentIndex = index;
 
     overlay = document.createElement("div");
     overlay.className = "lightbox";
     overlay.style.display = "flex";
-  overlay.addEventListener("touchstart", function(e){
-  isSwiping = false;
-  touchStartX = e.changedTouches[0].screenX;
-}, { passive:true });
-
-overlay.addEventListener("touchend", function(e){
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-}, {passive:true});
 
     img = document.createElement("img");
     img.src = images[currentIndex].href;
@@ -411,9 +391,15 @@ overlay.addEventListener("touchend", function(e){
     overlay.appendChild(next);
     document.body.appendChild(overlay);
 
-    overlay.addEventListener("click", closeLightbox);
+    // Alleen sluiten als je op de donkere achtergrond tikt
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) {
+        closeLightbox();
+      }
+    });
 
-    img.addEventListener("click", function(e){
+    // Klik op afbeelding: links = vorige, rechts = volgende
+    img.addEventListener("click", function (e) {
       e.stopPropagation();
 
       const rect = img.getBoundingClientRect();
@@ -426,34 +412,35 @@ overlay.addEventListener("touchend", function(e){
       }
     });
 
-    prev.addEventListener("click", function(e){
+    prev.addEventListener("click", function (e) {
       e.stopPropagation();
       showPrev();
     });
 
-    next.addEventListener("click", function(e){
+    next.addEventListener("click", function (e) {
       e.stopPropagation();
       showNext();
     });
 
     document.addEventListener("keydown", keyHandler);
 
-    overlay.addEventListener("touchstart", function(e){
+    // Swipe werkt op de afbeelding
+    img.addEventListener("touchstart", function (e) {
       touchStartX = e.changedTouches[0].screenX;
-    }, { passive:true });
+    }, { passive: true });
 
-    overlay.addEventListener("touchend", function(e){
+    img.addEventListener("touchend", function (e) {
       touchEndX = e.changedTouches[0].screenX;
       handleSwipe();
-    }, { passive:true });
+    }, { passive: true });
   }
 
-  function closeLightbox(){
+  function closeLightbox() {
     document.removeEventListener("keydown", keyHandler);
     if (overlay) overlay.remove();
   }
 
-  function changeImage(newIndex){
+  function changeImage(newIndex) {
     currentIndex = newIndex;
 
     img.classList.remove("lightbox-image-active");
@@ -462,53 +449,53 @@ overlay.addEventListener("touchend", function(e){
     setTimeout(() => {
       img.src = images[currentIndex].href;
 
-      img.onload = function(){
+      img.onload = function () {
         img.classList.remove("lightbox-image-fade");
         img.classList.add("lightbox-image-active");
       };
     }, 120);
   }
 
-  function showNext(){
+  function showNext() {
     let nextIndex = currentIndex + 1;
-    if(nextIndex >= images.length) nextIndex = 0;
+    if (nextIndex >= images.length) nextIndex = 0;
     changeImage(nextIndex);
   }
 
-  function showPrev(){
+  function showPrev() {
     let prevIndex = currentIndex - 1;
-    if(prevIndex < 0) prevIndex = images.length - 1;
+    if (prevIndex < 0) prevIndex = images.length - 1;
     changeImage(prevIndex);
   }
 
-  function keyHandler(e){
-    if(e.key === "ArrowRight") showNext();
-    if(e.key === "ArrowLeft") showPrev();
-    if(e.key === "Escape") closeLightbox();
+  function keyHandler(e) {
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "ArrowLeft") showPrev();
+    if (e.key === "Escape") closeLightbox();
   }
 
- function handleSwipe(){
-  const diff = touchEndX - touchStartX;
-  isSwiping = Math.abs(diff) > 40;
+  function handleSwipe() {
+    const diff = touchEndX - touchStartX;
 
-  if (!isSwiping) return;
+    // alleen reageren op echte swipe
+    if (Math.abs(diff) < 50) return;
 
-  if (diff < 0) {
-    showNext();
-  } else {
-    showPrev();
+    if (diff < 0) {
+      showNext();
+    } else {
+      showPrev();
+    }
   }
-}
 
   images.forEach((link, index) => {
-    link.addEventListener("click", function(e){
+    link.addEventListener("click", function (e) {
       e.preventDefault();
       openLightbox(index);
     });
   });
-
 });
 </script>
+
 </body>
 </html>
 
