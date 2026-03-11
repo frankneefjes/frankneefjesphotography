@@ -390,19 +390,19 @@ next.addEventListener("click", function(e){
 
 document.addEventListener("keydown", keyHandler);
 
-overlay.addEventListener("touchstart", function(e){
+img.addEventListener("touchstart", function(e){
   moved = false;
   touchStartX = e.changedTouches[0].screenX;
 }, { passive:true });
 
-overlay.addEventListener("touchmove", function(e){
+img.addEventListener("touchmove", function(e){
   const currentX = e.changedTouches[0].screenX;
   if (Math.abs(currentX - touchStartX) > 20) {
     moved = true;
   }
 }, { passive:true });
 
-overlay.addEventListener("touchend", function(e){
+img.addEventListener("touchend", function(e){
   touchEndX = e.changedTouches[0].screenX;
 
   if (Math.abs(touchEndX - touchStartX) > 40) {
@@ -412,6 +412,7 @@ overlay.addEventListener("touchend", function(e){
   setTimeout(function(){
     moved = false;
   }, 50);
+
 }, { passive:true });
   }
 
