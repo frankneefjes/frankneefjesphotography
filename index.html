@@ -443,23 +443,9 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.appendChild(next);
     document.body.appendChild(overlay);
 
-    // sluiten alleen bij klik op donkere achtergrond
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) {
         closeLightbox();
-      }
-    });
-
-    // klik links/rechts op afbeelding
-    img.addEventListener("click", function (e) {
-      e.stopPropagation();
-      const rect = img.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-
-      if (clickX < rect.width / 2) {
-        showPrev();
-      } else {
-        showNext();
       }
     });
 
@@ -475,7 +461,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("keydown", keyHandler);
 
-    // swipe op mobiel
     overlay.addEventListener("touchstart", function (e) {
       touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
