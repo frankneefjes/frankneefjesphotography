@@ -380,3 +380,28 @@ footer{
     font-size: 1.05rem;
   }
 }
+@media (max-width: 768px) {
+  .hero{
+    height: 100svh !important;
+    min-height: 100svh !important;
+  }
+
+  .hero-bg{
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #000 !important;
+  }
+
+  .hero-content{
+    padding: 0 20px !important;
+  }
+
+  .hero-content h1{
+    font-size: 3rem !important;
+  }
+
+  .hero-content p{
+    font-size: 1.05rem !important;
+  }
+}
