@@ -350,3 +350,16 @@ footer{
 .lightbox-image-fade{
   opacity:.55;
 }
+@media (max-width: 768px) {
+  .hero{
+    height: 85svh !important;
+    min-height: 85svh !important;
+  }
+
+  .hero-bg{
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #000 !important;
+  }
+}
