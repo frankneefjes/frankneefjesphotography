@@ -225,9 +225,9 @@ footer{
   margin:0 auto;
 }
 
-/* LIGHTBOX */
+/*  */
 
-.lightbox{
+.{
   position:fixed;
   top:0;
   left:0;
@@ -304,10 +304,21 @@ footer{
     padding:3vw;
   }
 
-  .lightbox img{
-    max-width:calc(100vw - 6vw);
-    max-height:calc(100vh - 6vh);
-  }
+ .lightbox img{
+  max-width:90vw;
+  max-height:85vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+}
+
+.lightbox{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 }
 .lightbox-prev,
 .lightbox-next{
