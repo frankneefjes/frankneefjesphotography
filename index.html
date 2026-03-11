@@ -360,13 +360,31 @@ document.addEventListener("DOMContentLoaded", function () {
   let overlay, img, prev, next;
   let touchStartX = 0;
   let touchEndX = 0;
+function handleSwipe(){
+  const swipeDistance = touchEndX - touchStartX;
 
+  if (Math.abs(swipeDistance) < 50) return;
+
+  if (swipeDistance < 0) {
+    nextImage();
+  } else {
+    prevImage();
+  }
+}
   function openLightbox(index){
     currentIndex = index;
 
     overlay = document.createElement("div");
     overlay.className = "lightbox";
     overlay.style.display = "flex";
+    overlay.addEventListener("touchstart", function(e){
+  touchStartX = e.changedTouches[0].screenX;
+}, {passive:true});
+
+overlay.addEventListener("touchend", function(e){
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, {passive:true});
 
     img = document.createElement("img");
     img.src = images[currentIndex].href;
