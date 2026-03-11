@@ -385,3 +385,27 @@ font-size:0.95rem;
 }
 
 }
+@media screen and (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .portfolio-grid a,
+  .portfolio-grid img,
+  .tile {
+    width: 100% !important;
+  }
+
+  .tile {
+    min-height: auto !important;
+  }
+
+  .tile img,
+  .portfolio-grid img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+}
