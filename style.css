@@ -396,7 +396,29 @@ font-size:0.95rem;
   .tile {
     width: 100% !important;
   }
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
 
+  .tile {
+    min-height: 0 !important;
+  }
+
+  .tile img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+}
+  @media screen and (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
   .tile {
     min-height: auto !important;
   }
