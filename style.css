@@ -412,3 +412,16 @@ footer{
 .lightbox img {
   touch-action: none;
 }
+@media (max-width: 768px) {
+
+.hero{
+height: 90svh;
+min-height: 90svh;
+}
+
+.hero-bg{
+background-position: center center;
+background-size: cover;
+}
+
+}
