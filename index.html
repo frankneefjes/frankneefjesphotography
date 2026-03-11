@@ -366,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let touchStartX = 0;
   let touchEndX = 0;
+  let swipeHandled = false;
 
   function openLightbox(index) {
     currentIndex = index;
@@ -392,11 +393,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
 
     // Alleen sluiten als je op de donkere achtergrond tikt
-    overlay.addEventListener("click", function (e) {
-      if (e.target === overlay) {
-        closeLightbox();
-      }
-    });
+  overlay.addEventListener("click", function (e) {
+  if (swipeHandled) return;
+
+  if (e.target === overlay) {
+    closeLightbox();
+  }
+});
 
     // Klik op afbeelding: links = vorige, rechts = volgende
     img.addEventListener("click", function (e) {
@@ -425,12 +428,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", keyHandler);
 // Swipe werkt op de lightbox
 overlay.addEventListener("touchstart", function (e) {
+  swipeHandled = false;
   touchStartX = e.changedTouches[0].screenX;
+  touchEndX = touchStartX;
+}, { passive: true });
+
+overlay.addEventListener("touchmove", function (e) {
+  touchEndX = e.changedTouches[0].screenX;
+  if (Math.abs(touchEndX - touchStartX) > 20) {
+    swipeHandled = true;
+  }
 }, { passive: true });
 
 overlay.addEventListener("touchend", function (e) {
   touchEndX = e.changedTouches[0].screenX;
   handleSwipe();
+
+  setTimeout(function () {
+    swipeHandled = false;
+  }, 80);
 }, { passive: true });
   }
 
