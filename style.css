@@ -479,3 +479,6 @@ grid-column: span 3;
 .lightbox{
   touch-action: pan-y;
 }
+.lightbox img{
+  touch-action: pan-y;
+}
