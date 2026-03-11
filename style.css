@@ -405,3 +405,10 @@ footer{
     font-size: 1.05rem !important;
   }
 }
+.lightbox {
+  touch-action: none;
+}
+
+.lightbox img {
+  touch-action: none;
+}
