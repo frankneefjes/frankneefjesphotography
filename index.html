@@ -412,11 +412,12 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function () {
   const images = document.querySelectorAll(".portfolio-grid a");
   let currentIndex = 0;
-  let overlay, img, prev, next;
-
+  let overlay = null;
+  let img = null;
+  let prev = null;
+  let next = null;
   let touchStartX = 0;
   let touchEndX = 0;
-  let swipeHandled = false;
 
   function openLightbox(index) {
     currentIndex = index;
@@ -442,19 +443,16 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.appendChild(next);
     document.body.appendChild(overlay);
 
-    // Alleen sluiten als je op de donkere achtergrond tikt
-  overlay.addEventListener("click", function (e) {
-  if (swipeHandled) return;
+    // sluiten alleen bij klik op donkere achtergrond
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) {
+        closeLightbox();
+      }
+    });
 
-  if (e.target === overlay) {
-    closeLightbox();
-  }
-});
-
-    // Klik op afbeelding: links = vorige, rechts = volgende
+    // klik links/rechts op afbeelding
     img.addEventListener("click", function (e) {
       e.stopPropagation();
-
       const rect = img.getBoundingClientRect();
       const clickX = e.clientX - rect.left;
 
@@ -476,49 +474,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener("keydown", keyHandler);
-// Swipe werkt op de lightbox
-overlay.addEventListener("touchstart", function (e) {
-  swipeHandled = false;
-  touchStartX = e.changedTouches[0].screenX;
-  touchEndX = touchStartX;
-}, { passive: true });
 
-overlay.addEventListener("touchmove", function (e) {
-  touchEndX = e.changedTouches[0].screenX;
-  if (Math.abs(touchEndX - touchStartX) > 20) {
-    swipeHandled = true;
-  }
-}, { passive: true });
+    // swipe op mobiel
+    overlay.addEventListener("touchstart", function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
 
-overlay.addEventListener("touchend", function (e) {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-
-  setTimeout(function () {
-    swipeHandled = false;
-  }, 80);
-}, { passive: true });
+    overlay.addEventListener("touchend", function (e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
   }
 
   function closeLightbox() {
     document.removeEventListener("keydown", keyHandler);
     if (overlay) overlay.remove();
+    overlay = null;
+    img = null;
+    prev = null;
+    next = null;
   }
 
   function changeImage(newIndex) {
     currentIndex = newIndex;
-
-    img.classList.remove("lightbox-image-active");
-    img.classList.add("lightbox-image-fade");
-
-    setTimeout(() => {
-      img.src = images[currentIndex].href;
-
-      img.onload = function () {
-        img.classList.remove("lightbox-image-fade");
-        img.classList.add("lightbox-image-active");
-      };
-    }, 120);
+    img.src = images[currentIndex].href;
   }
 
   function showNext() {
@@ -541,8 +520,6 @@ overlay.addEventListener("touchend", function (e) {
 
   function handleSwipe() {
     const diff = touchEndX - touchStartX;
-
-    // alleen reageren op echte swipe
     if (Math.abs(diff) < 50) return;
 
     if (diff < 0) {
