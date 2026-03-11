@@ -120,7 +120,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.appendChild(overlay);
 
-    overlay.addEventListener("click", closeLightbox);
+   overlay.addEventListener("click", function(e){
+  if (isSwiping) {
+    isSwiping = false;
+    return;
+  }
+  closeLightbox();
+});
     img.addEventListener("click", e => e.stopPropagation());
 
     prev.addEventListener("click", function(e){
@@ -360,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let overlay, img, prev, next;
   let touchStartX = 0;
   let touchEndX = 0;
+  let isSwiping = false;
 function handleSwipe(){
   const swipeDistance = touchEndX - touchStartX;
 
@@ -377,9 +384,10 @@ function handleSwipe(){
     overlay = document.createElement("div");
     overlay.className = "lightbox";
     overlay.style.display = "flex";
-    overlay.addEventListener("touchstart", function(e){
+  overlay.addEventListener("touchstart", function(e){
+  isSwiping = false;
   touchStartX = e.changedTouches[0].screenX;
-}, {passive:true});
+}, { passive:true });
 
 overlay.addEventListener("touchend", function(e){
   touchEndX = e.changedTouches[0].screenX;
@@ -479,16 +487,18 @@ overlay.addEventListener("touchend", function(e){
     if(e.key === "Escape") closeLightbox();
   }
 
-  function handleSwipe(){
-    const diff = touchEndX - touchStartX;
-    if (Math.abs(diff) < 40) return;
+ function handleSwipe(){
+  const diff = touchEndX - touchStartX;
+  isSwiping = Math.abs(diff) > 40;
 
-    if (diff < 0) {
-      showNext();
-    } else {
-      showPrev();
-    }
+  if (!isSwiping) return;
+
+  if (diff < 0) {
+    showNext();
+  } else {
+    showPrev();
   }
+}
 
   images.forEach((link, index) => {
     link.addEventListener("click", function(e){
