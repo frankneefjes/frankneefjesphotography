@@ -4,31 +4,41 @@
   <title>Frank Neefjes Photography | Documentary & Travel Photographer</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentary travel photography by Frank Neefjes. Human stories from remote regions including Afghanistan, Kasjmir, Tibet, North Korea">
 
-  <meta name="description" content="Documentary travel photography by Frank Neefjes. Human stories from remote regions including Afghanistan, Kashmir, Ladakh, Iran, Tajikistan, Uzbekistan, the Caucasus, Lake Baikal and North Korea.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
- 
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- PhotoSwipe CSS en JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+  <!-- CSS voor de grid -->
   <style>
-    <!-- PhotoSwipe CSS en JS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
-  .swiper-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-  }
-</style>
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 10px;
+      padding: 10px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .portfolio-grid a {
+      display: block;
+      overflow: hidden;
+    }
+
+    .portfolio-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-grid img:hover {
+      transform: scale(1.03);
+    }
+  </style>
 </head>
 
 <body>
@@ -690,6 +700,68 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Voeg een click event toe
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const options = {
+          index: index,
+          bgOpacity: 0.8,
+          showHideOpacity: true
+        };
+        const lightBox = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        lightBox.init();
+      });
+    });
+  });
+</script>
+    <!-- Root element van PhotoSwipe -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--share" title="Share"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const pswpElement = document.querySelector('.pswp');
+    const items = [];
+
+    document.querySelectorAll('.portfolio-grid a').forEach((link, index) => {
+      const img = link.querySelector('img');
+      items.push({
+        src: link.getAttribute('href'),
+        w: parseInt(link.getAttribute('data-size').split('x')[0]),
+        h: parseInt(link.getAttribute('data-size').split('x')[1]),
+        title: img.getAttribute('alt')
+      });
+
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const options = {
