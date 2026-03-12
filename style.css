@@ -240,16 +240,6 @@ footer{
     font-size:1rem;
     letter-spacing:1.5px;
   }
-
-  .portfolio-grid{
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    padding:0 12px;
-  }
-
-  .portfolio-grid img{
-    height:260px;
-  }
 }
 
 @media (max-width: 640px){
@@ -269,14 +259,6 @@ footer{
     padding:60px 14px;
   }
 
-  .portfolio-grid{
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-  }
-
-  .portfolio-grid img{
-    height:180px;
-  }
 
   .lightbox{
     padding:3vw;
