@@ -14,6 +14,11 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <style>
+    <!-- PhotoSwipe CSS en JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
   .swiper-slide img {
     width: 100%;
     height: auto;
@@ -44,90 +49,110 @@
   </header>
 
   <section id="portfolio">
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <!-- Foto 1 -->
-      <div class="swiper-slide">
-        <a href="iran-mother-child.jpg"><img src="iran-mother-child.jpg" alt="Mother and child Iran"></a>
-      </div>
-      <!-- Foto 2 -->
-      <div class="swiper-slide">
-        <a href="north-korea-railway-crossing.jpg"><img src="north-korea-railway-crossing.jpg" alt="Railway crossing North Korea"></a>
-      </div>
-      <!-- Foto 3 -->
-      <div class="swiper-slide">
-        <a href="01-running-woman-dust.jpg"><img src="01-running-woman-dust.jpg" alt="Running woman in dust"></a>
-      </div>
-      <!-- Foto 4 -->
-      <div class="swiper-slide">
-        <a href="tibet-woman-fur-hat.jpg"><img src="tibet-woman-fur-hat.jpg" alt="Tibetan woman with fur hat"></a>
-      </div>
-      <!-- Foto 5 -->
-      <div class="swiper-slide">
-        <a href="02-afghanistan-sunrise.jpg"><img src="02-afghanistan-sunrise.jpg" alt="Afghanistan sunrise"></a>
-      </div>
-      <!-- Foto 6 -->
-      <div class="swiper-slide">
-        <a href="tibet-travelers-cart.jpg"><img src="tibet-travelers-cart.jpg" alt="Travelers transporting goods in Tibet"></a>
-      </div>
-      <!-- Foto 7 -->
-      <div class="swiper-slide">
-        <a href="anniversary-70-year-peoples-republic-china.jpg"><img src="anniversary-70-year-peoples-republic-china.jpg" alt="70 year anniversary China"></a>
-      </div>
-      <!-- Foto 8 -->
-      <div class="swiper-slide">
-        <a href="03-iran-mosque-colour.jpg"><img src="03-iran-mosque-colour.jpg" alt="Iran mosque colour"></a>
-      </div>
-      <!-- Foto 9 -->
-      <div class="swiper-slide">
-        <a href="north-korea-train.jpg"><img src="north-korea-train.jpg" alt="Train in North Korea"></a>
-      </div>
-      <!-- Foto 10 -->
-      <div class="swiper-slide">
-        <a href="07-beachhotel-northkorea.jpg"><img src="07-beachhotel-northkorea.jpg" alt="Beach hotel in North Korea"></a>
-      </div>
-      <!-- Foto 11 -->
-      <div class="swiper-slide">
-        <a href="06-nomad-man-ladakh.jpg"><img src="06-nomad-man-ladakh.jpg" alt="Nomad man in Ladakh"></a>
-      </div>
-      <!-- Foto 12 -->
-      <div class="swiper-slide">
-        <a href="08-women-afghanistan.jpg"><img src="08-women-afghanistan.jpg" alt="Women in Afghanistan"></a>
-      </div>
-      <!-- Foto 13 -->
-      <div class="swiper-slide">
-        <a href="18-nomad-woman.jpg"><img src="18-nomad-woman.jpg" alt="Nomad woman"></a>
-      </div>
-      <!-- Foto 14 -->
-      <div class="swiper-slide">
-        <a href="09-hindukush-mountains.jpg"><img src="09-hindukush-mountains.jpg" alt="Hindukush mountains"></a>
-      </div>
-      <!-- Foto 15 -->
-      <div class="swiper-slide">
-        <a href="12-three-novices-monks.jpg"><img src="12-three-novices-monks.jpg" alt="Three novice monks"></a>
-      </div>
-      <!-- Foto 16 -->
-      <div class="swiper-slide">
-        <a href="14-monk-drum.jpg"><img src="14-monk-drum.jpg" alt="Monk with drum"></a>
-      </div>
-      <!-- Foto 17 -->
-      <div class="swiper-slide">
-        <a href="15-girl-kashmir.jpg"><img src="15-girl-kashmir.jpg" alt="Girl in Kashmir"></a>
-      </div>
-      <!-- Foto 18 -->
-      <div class="swiper-slide">
-        <a href="19-mosque-balloons.jpg"><img src="19-mosque-balloons.jpg" alt="Mosque with balloons"></a>
-      </div>
-      <!-- Foto 19 -->
-      <div class="swiper-slide">
-        <a href="04-afghanistan-woman-child-road.jpg"><img src="04-afghanistan-woman-child-road.jpg" alt="Afghanistan woman and child on road"></a>
-      </div>
-    </div>
-    <!-- Paginatie en navigatie -->
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+ <div class="portfolio-grid">
+  <!-- Foto 1 -->
+  <a href="iran-mother-child.jpg" data-size="1200x800">
+    <img src="iran-mother-child.jpg" alt="Mother and child Iran" loading="lazy">
+  </a>
+  <!-- Foto 2 -->
+  <a href="north-korea-railway-crossing.jpg" data-size="1200x800">
+    <img src="north-korea-railway-crossing.jpg" alt="Railway crossing North Korea" loading="lazy">
+  </a>
+  <!-- Foto 3 -->
+  <a href="01-running-woman-dust.jpg" data-size="1200x800">
+    <img src="01-running-woman-dust.jpg" alt="Running woman in dust" loading="lazy">
+  </a>
+  <!-- Foto 4 -->
+  <a href="tibet-woman-fur-hat.jpg" data-size="1200x800">
+    <img src="tibet-woman-fur-hat.jpg" alt="Tibetan woman with fur hat" loading="lazy">
+  </a>
+  <!-- Foto 5 -->
+  <a href="02-afghanistan-sunrise.jpg" data-size="1200x800">
+    <img src="02-afghanistan-sunrise.jpg" alt="Afghanistan sunrise" loading="lazy">
+  </a>
+  <!-- Foto 6 -->
+  <a href="tibet-travelers-cart.jpg" data-size="1200x800">
+    <img src="tibet-travelers-cart.jpg" alt="Travelers transporting goods in Tibet" loading="lazy">
+  </a>
+  <!-- Foto 7 -->
+  <a href="anniversary-70-year-peoples-republic-china.jpg" data-size="1200x800">
+    <img src="anniversary-70-year-peoples-republic-china.jpg" alt="70 year anniversary China" loading="lazy">
+  </a>
+  <!-- Foto 8 -->
+  <a href="03-iran-mosque-colour.jpg" data-size="1200x800">
+    <img src="03-iran-mosque-colour.jpg" alt="Iran mosque colour" loading="lazy">
+  </a>
+  <!-- Foto 9 -->
+  <a href="north-korea-train.jpg" data-size="1200x800">
+    <img src="north-korea-train.jpg" alt="Train in North Korea" loading="lazy">
+  </a>
+  <!-- Foto 10 -->
+  <a href="07-beachhotel-northkorea.jpg" data-size="1200x800">
+    <img src="07-beachhotel-northkorea.jpg" alt="Beach hotel in North Korea" loading="lazy">
+  </a>
+  <!-- Foto 11 -->
+  <a href="06-nomad-man-ladakh.jpg" data-size="1200x800">
+    <img src="06-nomad-man-ladakh.jpg" alt="Nomad man in Ladakh" loading="lazy">
+  </a>
+  <!-- Foto 12 -->
+  <a href="08-women-afghanistan.jpg" data-size="1200x800">
+    <img src="08-women-afghanistan.jpg" alt="Women in Afghanistan" loading="lazy">
+  </a>
+  <!-- Foto 13 -->
+  <a href="18-nomad-woman.jpg" data-size="1200x800">
+    <img src="18-nomad-woman.jpg" alt="Nomad woman" loading="lazy">
+  </a>
+  <!-- Foto 14 -->
+  <a href="09-hindukush-mountains.jpg" data-size="1200x800">
+    <img src="09-hindukush-mountains.jpg" alt="Hindukush mountains" loading="lazy">
+  </a>
+  <!-- Foto 15 -->
+  <a href="12-three-novices-monks.jpg" data-size="1200x800">
+    <img src="12-three-novices-monks.jpg" alt="Three novice monks" loading="lazy">
+  </a>
+  <!-- Foto 16 -->
+  <a href="14-monk-drum.jpg" data-size="1200x800">
+    <img src="14-monk-drum.jpg" alt="Monk with drum" loading="lazy">
+  </a>
+  <!-- Foto 17 -->
+  <a href="15-girl-kashmir.jpg" data-size="1200x800">
+    <img src="15-girl-kashmir.jpg" alt="Girl in Kashmir" loading="lazy">
+  </a>
+  <!-- Foto 18 -->
+  <a href="19-mosque-balloons.jpg" data-size="1200x800">
+    <img src="19-mosque-balloons.jpg" alt="Mosque with balloons" loading="lazy">
+  </a>
+  <!-- Foto 19 -->
+  <a href="04-afghanistan-woman-child-road.jpg" data-size="1200x800">
+    <img src="04-afghanistan-woman-child-road.jpg" alt="Afghanistan woman and child on road" loading="lazy">
+  </a>
+  <!-- Foto 20 -->
+  <a href="08-afghanistan-woman-child.jpg" data-size="1200x800">
+    <img src="08-afghanistan-woman-child.jpg" alt="Afghanistan woman and child" loading="lazy">
+  </a>
+  <!-- Foto 21 -->
+  <a href="13-turkut-autumn-valley.jpg" data-size="1200x800">
+    <img src="13-turkut-autumn-valley.jpg" alt="Autumn valley Turkut" loading="lazy">
+  </a>
+  <!-- Foto 22 -->
+  <a href="14-monk-drum.jpg" data-size="1200x800">
+    <img src="14-monk-drum.jpg" alt="Monk with drum" loading="lazy">
+  </a>
+  <!-- Foto 23 -->
+  <a href="15-girl-kashmir.jpg" data-size="1200x800">
+    <img src="15-girl-kashmir.jpg" alt="Girl in Kashmir" loading="lazy">
+  </a>
+  <!-- Foto 24 -->
+  <a href="19-mosque-balloons.jpg" data-size="1200x800">
+    <img src="19-mosque-balloons.jpg" alt="Mosque with balloons" loading="lazy">
+  </a>
+  <!-- Foto 25 -->
+  <a href="tibet-travelers-cart.jpg" data-size="1200x800">
+    <img src="tibet-travelers-cart.jpg" alt="Travelers transporting goods in Tibet" loading="lazy">
+  </a>
+</div>
+
+  
 </section>
 
   <section class="section contact" id="contact">
@@ -547,5 +572,71 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialiseer PhotoSwipe
+    const pswpElement = document.querySelectorAll('.pswp')[0];
+    const items = [];
+
+    // Maak een array van items voor PhotoSwipe
+    document.querySelectorAll('.portfolio-grid a').forEach((link, index) => {
+      const img = link.querySelector('img');
+      items.push({
+        src: link.getAttribute('href'),
+        w: parseInt(link.getAttribute('data-size').split('x')[0]),
+        h: parseInt(link.getAttribute('data-size').split('x')[1]),
+        title: img.getAttribute('alt')
+      });
+
+      // Voeg een click event toe
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const options = {
+          index: index,
+          bgOpacity: 0.8,
+          showHideOpacity: true
+        };
+        const lightBox = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        lightBox.init();
+      });
+    });
+  });
+</script>
+
+<!-- Root element van PhotoSwipe -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--share" title="Share"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
