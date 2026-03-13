@@ -254,13 +254,22 @@ footer{
 
 .lightbox img{
   display:block;
-  width:auto;
-  height:auto;
-  max-width:calc(100vw - 4vw);
-  max-height:calc(100vh - 4vh);
+  width:min(92vw, 1200px);
+  height:78vh;
+  max-width:none;
+  max-height:none;
   object-fit:contain;
+  transition:opacity .22s ease;
 }
-
+@media (max-width:768px){
+  .lightbox img{
+    width:92vw;
+    height:75vh;
+    max-width:none;
+    max-height:none;
+    object-fit:contain;
+  }
+}
 /* RESPONSIVE */
 
 @media (max-width: 900px){
@@ -296,10 +305,6 @@ footer{
     padding:3vw;
   }
 
-  .lightbox img{
-    max-width:calc(100vw - 6vw);
-    max-height:calc(100vh - 6vh);
-  }
 }
 .lightbox-prev,
 .lightbox-next{
@@ -319,9 +324,6 @@ footer{
 
 .lightbox-next{
   right:20px;
-}
-.lightbox img{
-  transition:opacity .18s ease;
 }
 
 .lightbox-image-active{
@@ -347,15 +349,6 @@ footer{
     right:8px;
   }
 }
-.lightbox img{
-  display:block;
-  width:auto;
-  height:auto;
-  max-width:calc(100vw - 4vw);
-  max-height:calc(100vh - 4vh);
-  object-fit:contain;
-  transition:opacity .22s ease;
-}
 
 .lightbox-image-active{
   opacity:1;
@@ -377,12 +370,4 @@ footer{
     background-color: #000 !important;
   }
 }
-@media (max-width:768px){
 
-  .lightbox img{
-    width:100%;
-    height:75vh;
-    object-fit:contain;
-  }
-
-}
