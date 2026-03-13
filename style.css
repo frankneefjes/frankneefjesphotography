@@ -46,7 +46,7 @@ section{
 
 .hero{
   position:relative;
-  height:100vh;
+  min-height:100vh;
   min-height:0;
   overflow:hidden;
   display:flex;
@@ -58,8 +58,8 @@ section{
 @media (max-width:768px){
   .hero{
     height:auto;
-    min-height:75vh;
-    padding:100px 20px 60px;
+    min-height:unset;
+    padding:90px 20px 40px;
   }
 
   .hero h1{
