@@ -46,7 +46,7 @@ section{
 
 .hero{
   position:relative;
-  min-height:100vh;
+  height:100vh;
   min-height:0;
   overflow:hidden;
   display:flex;
@@ -57,19 +57,26 @@ section{
 }
 @media (max-width:768px){
   .hero{
-    height:auto;
+    height:78vh;
     min-height:unset;
-    padding:90px 20px 40px;
+    padding:80px 20px 20px;
   }
 
   .hero h1{
-    font-size:2.6rem;
+    font-size:2.5rem;
     line-height:1;
+    margin-bottom:12px;
   }
 
   .hero p{
     font-size:1rem;
-    margin-bottom:22px;
+    line-height:1.4;
+    margin-bottom:20px;
+  }
+
+  .hero .btn{
+    padding:14px 28px;
+    font-size:1.05rem;
   }
 }
 .hero-bg{
@@ -147,7 +154,7 @@ section{
 /* PORTFOLIO */
 
 #portfolio{
-  padding:40px 20px 80px;
+  padding:20px 20px 80px;
   text-align:center;
 }
 
@@ -159,10 +166,10 @@ section{
 .portfolio-grid{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
-  gap:24px;
-  max-width:1400px;
+  gap:28px;
+  max-width:1800px;
   margin:40px auto 0;
-  padding:0 24px;
+  padding:0 20px;
 }
 
 .portfolio-grid a{
@@ -173,7 +180,7 @@ section{
 
 .portfolio-grid img{
   width:100%;
-  height:420px;
+  height:520px;
   object-fit:cover;
   border-radius:12px;
   display:block;
