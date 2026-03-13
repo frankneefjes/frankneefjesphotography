@@ -239,34 +239,27 @@ footer{
 
 .lightbox{
   position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background:rgba(0,0,0,0.96);
+  inset:0;
+  background:rgba(0,0,0,.96);
   display:none;
   align-items:center;
   justify-content:center;
   z-index:99999;
   overflow:hidden;
-  padding:2vw;
+  padding:0;
 }
 
 .lightbox img{
   display:block;
-  width:min(92vw, 1200px);
+  width:90vw;
   height:78vh;
-  max-width:none;
-  max-height:none;
   object-fit:contain;
   transition:opacity .22s ease;
 }
 @media (max-width:768px){
   .lightbox img{
     width:92vw;
-    height:75vh;
-    max-width:none;
-    max-height:none;
+    height:68vh;
     object-fit:contain;
   }
 }
