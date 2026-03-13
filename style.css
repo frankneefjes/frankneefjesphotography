@@ -58,7 +58,7 @@ section{
 @media (max-width:768px){
   .hero{
     height:auto;
-    min-height:85vh;
+    min-height:75vh;
     padding:100px 20px 60px;
   }
 
@@ -147,7 +147,7 @@ section{
 /* PORTFOLIO */
 
 #portfolio{
-  padding:80px 20px;
+  padding:40px 20px 80px;
   text-align:center;
 }
 
