@@ -363,4 +363,7 @@ footer{
     background-color: #000 !important;
   }
 }
-
+.site-logo{
+height:80px;
+margin-bottom:20px;
+}
