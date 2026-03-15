@@ -133,7 +133,7 @@ section{
   color:#000;
 }
 
-/* PORTFOLIO */
+/*  */
 
 #portfolio{
   padding:80px 20px;
@@ -266,7 +266,7 @@ footer{
   }
 
   #portfolio{
-    padding:60px 14px;
+    padding:30px 14px 60px;
   }
 
   .portfolio-grid{
