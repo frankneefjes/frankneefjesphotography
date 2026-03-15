@@ -235,7 +235,7 @@ footer{
   margin:0 auto;
 }
 
-/* LIGHTBOX */
+/*  */
 
 .lightbox {
     position: fixed;
@@ -308,23 +308,25 @@ footer{
     padding: 0;
 }
 
-.lightbox-prev {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 60px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    padding: 20px;
-    left: 20px;
+.lightbox-prev,
+.lightbox-next{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 90px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity .25s ease;
 }
 
 .lightbox-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 60px;
+    font-size: 90px;
     color: white;
     cursor: pointer;
     user-select: none;
@@ -338,7 +340,10 @@ footer{
 .lightbox-next{
   right:20px;
 }
-
+.lightbox:hover .lightbox-prev,
+.lightbox:hover .lightbox-next{
+  opacity: 0.9;
+}
 .lightbox-image-active{
   opacity:1;
 }
