@@ -57,8 +57,8 @@ section{
 }
 @media (max-width:768px){
   .hero{
-    height:70vh;
-    min-height:unset;
+    min-height:78vh;
+    height:unset;
   }
 }
 .hero-bg{
@@ -254,7 +254,7 @@ footer{
 
 @media (max-width: 640px){
   .hero{
-    min-height:90vh;
+    min-height:78vh;
   }
 
   .hero-content h1{
@@ -352,13 +352,30 @@ footer{
 }
 @media (max-width: 768px) {
   .hero{
-    height: 90svh !important;
-    min-height: 90svh !important;
+    min-height: 78svh !important;
+    height: auto !important;
   }
 
   .hero-bg{
-    background-size: cover!important;
+    background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
+  }
+
+  .hero-content{
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .hero-content h1{
+    font-size: 2.6rem !important;
+    line-height: 0.95;
+    margin: 0 0 14px;
+  }
+
+  .hero-content p{
+    font-size: 0.95rem !important;
+    letter-spacing: 1px;
+    margin: 0 0 22px;
   }
 }
