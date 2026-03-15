@@ -254,7 +254,7 @@ footer{
 
 @media (max-width: 640px){
   .hero{
-    min-height:620px;
+    min-height:100vh;
   }
 
   .hero-content h1{
