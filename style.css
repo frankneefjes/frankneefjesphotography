@@ -245,7 +245,7 @@ footer{
     align-items: center;
     justify-content: center;
     z-index: 99999;
-    overflow: hidden;
+    overflow:auto;
     padding: 0;
     height: 100vh;
 }
@@ -254,7 +254,6 @@ footer{
     display: block;
     max-width: 90vw;
     max-height: 80vh;
-    object-fit: contain;
     margin: auto;
 }
 /* RESPONSIVE */
@@ -289,6 +288,13 @@ footer{
     gap: 10px;
     padding: 60px 14px;
     justify-content: center;
+}
+
+#portfolio .lightbox {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 300px;
+    margin: 5px;
+    cursor: pointer; 
 }
 
 .lightbox {
@@ -355,17 +361,6 @@ footer{
     .lightbox-next {
         right: 8px;
     }
-
-    .lightbox {
-        flex: 1 1 calc(50% - 20px);
-    }
-
-    .lightbox img {
-        max-width: 95vw;
-        max-height: 70vh;
-        object-fit: contain;
-        margin: auto;
-    }
 }
 
 @media (max-width: 480px) {
@@ -386,14 +381,25 @@ footer{
     height: 85svh !important;
     min-height: 85svh !important;
   }
-
-  .hero-bg{
+} 
+@media (max-width: 768px) {
+    #portfolio .lightbox {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .lightbox img {
+        max-width: 95vw;
+        max-height: 70vh;
+        object-fit: contain;
+        margin: auto;
+    }
+}
+.hero-bg {
     background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-color: #000 !important;
-  }
 }
+ 
 
 .site-logo{
 position:absolute;
