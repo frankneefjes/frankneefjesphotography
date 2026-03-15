@@ -247,6 +247,7 @@ footer{
   z-index:99999;
   overflow:hidden;
   padding:0;
+  height:100vh;
 }
 
 .lightbox img{
