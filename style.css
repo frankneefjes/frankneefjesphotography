@@ -254,7 +254,7 @@ footer{
   width:90vw;
   height:78vh;
   object-fit:contain;
-  transition:opacity .22s ease;
+  transition:none;
 }
 @media (max-width:768px){
   .lightbox img{
