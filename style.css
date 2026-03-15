@@ -238,17 +238,24 @@ footer{
 /* LIGHTBOX */
 
 .lightbox {
-    display: block;
-    margin: 0 auto;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .96);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
     overflow: hidden;
-    position: relative;
+    padding: 0;
+    height: 100vh;
 }
 
-.lightbox-img {
+.lightbox img {
     display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    margin: auto;
 }
 /* RESPONSIVE */
 
@@ -351,6 +358,13 @@ footer{
 
     .lightbox {
         flex: 1 1 calc(50% - 20px);
+    }
+
+    .lightbox img {
+        max-width: 95vw;
+        max-height: 70vh;
+        object-fit: contain;
+        margin: auto;
     }
 }
 
