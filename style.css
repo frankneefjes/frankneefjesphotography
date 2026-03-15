@@ -46,7 +46,7 @@ section{
 
 .hero{
   position:relative;
-  height:85vh;
+  height:70vh;
   min-height:0;
   overflow:hidden;
   display:flex;
@@ -57,7 +57,7 @@ section{
 }
 @media (max-width:768px){
   .hero{
-    min-height:78vh;
+    min-height:65vh;
     height:unset;
   }
 }
