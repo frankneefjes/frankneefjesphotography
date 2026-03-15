@@ -254,14 +254,14 @@ footer{
   display:block;
   width:90vw;
   height:78vh;
-  object-fit:cover;
+  object-fit:contain;
   transition:none;
 }
 @media (max-width:768px){
   .lightbox img{
     width:92vw;
     height:68vh;
-    object-fit:cover;
+    object-fit:contain;
     margin:auto;
   }
 }
