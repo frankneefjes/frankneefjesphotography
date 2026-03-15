@@ -237,33 +237,18 @@ footer{
 
 /* LIGHTBOX */
 
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.96);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-  overflow:hidden;
-  padding:0;
-  height:100vh;
+.lightbox {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
-.lightbox img{
-  display:block;
-  width:90vw;
-  height:78vh;
-  object-fit:contain;
-  transition:none;
-}
-@media (max-width:768px){
-  .lightbox img{
-    width:92vw;
-    height:68vh;
-    object-fit:contain;
-    margin:auto;
-  }
+.lightbox-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 /* RESPONSIVE */
 
@@ -291,28 +276,48 @@ footer{
     font-size:.95rem;
   }
 
-  #portfolio{
-    padding:60px 14px;
-  }
-
-
-  .lightbox{
-    padding:0;
-  }
-
-}
-.lightbox-prev,
-.lightbox-next{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:60px;
-  color:white;
-  cursor:pointer;
-  user-select:none;
-  padding:20px;
+  #portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 60px 14px;
+    justify-content: center;
 }
 
+.lightbox {
+    flex: 1 1 calc(33.333% - 20px);
+    aspect-ratio: 1 / 1;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.lightbox-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 20px;
+    left: 20px;
+}
+
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 20px;
+    right: 20px;
+}
 .lightbox-prev{
   left:20px;
 }
@@ -329,20 +334,30 @@ footer{
   opacity:.15;
 }
 
-@media (max-width: 768px){
-  .lightbox-prev,
-  .lightbox-next{
-    font-size:44px;
-    padding:14px;
-  }
+@media (max-width: 768px) {
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 44px;
+        padding: 14px;
+    }
 
-  .lightbox-prev{
-    left:8px;
-  }
+    .lightbox-prev {
+        left: 8px;
+    }
 
-  .lightbox-next{
-    right:8px;
-  }
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox {
+        flex: 1 1 100%;
+    }
 }
 
 .lightbox-image-active{
