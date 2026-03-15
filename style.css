@@ -92,7 +92,7 @@ section{
 
 
 .overlay{
-  position:absolute;
+  :absolute;
   inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
   z-index:1;
@@ -352,14 +352,13 @@ footer{
 }
 @media (max-width: 768px) {
   .hero{
-    height: 85svh !important;
-    min-height: 85svh !important;
+    height: 90svh !important;
+    min-height: 90svh !important;
   }
 
   .hero-bg{
-    background-size: contain !important;
+    background-size: cover!important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-color: #000 !important;
   }
 }
