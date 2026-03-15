@@ -258,10 +258,8 @@ footer{
 }
 @media (max-width:768px){
   .lightbox img{
-    max-width:92vw;
-    max-height:68vh;
-    width:auto;
-    height:auto;
+    width:92vw;
+    height:68vh;
     object-fit:contain;
     margin:auto;
   }
