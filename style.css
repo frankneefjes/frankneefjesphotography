@@ -371,8 +371,8 @@ footer{
   }
 
   .hero-bg{
-    background-size: contain !important;
-    background-position: center center !important;
+    background-size: cover !important;
+    background-position: center 30% !important;
     background-repeat: no-repeat !important;
   }
 
