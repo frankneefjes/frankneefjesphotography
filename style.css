@@ -50,8 +50,8 @@ section{
   margin-left:calc(50% - 50vw);
   margin-right:calc(50% - 50vw);
   max-width:none;
-  height:85vh;
-  min-height:520px;
+  height:70vh;
+  min-height:420px;
   overflow:hidden;
   display:flex;
   align-items:center;
@@ -276,8 +276,8 @@ footer{
   }
 
   .portfolio-grid{
-    grid-template-columns:repeat(3, 1fr;
-    gap:14px;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
   }
   .portfolio-grid a{
   aspect-ratio:4/3;
@@ -391,5 +391,15 @@ footer{
     font-size: 0.95rem !important;
     letter-spacing: 1px;
     margin: 0 0 22px;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .portfolio-grid a{
+    aspect-ratio:4/3;
   }
 }
