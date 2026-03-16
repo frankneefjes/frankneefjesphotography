@@ -64,7 +64,7 @@ section{
 .hero-bg{
   position:absolute;
   inset:0;
-  background-size:contain;
+  background-size:cover;
   background-position:center;
   opacity:0;
   animation:heroFade 7.5s infinite;
