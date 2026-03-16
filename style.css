@@ -50,8 +50,8 @@ section{
   margin-left:calc(50% - 50vw);
   margin-right:calc(50% - 50vw);
   max-width:none;
-  height:70vh;
-  min-height:420px;
+  height:58vh;
+  min-height:340px;
   overflow:hidden;
   display:flex;
   align-items:center;
