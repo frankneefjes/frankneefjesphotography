@@ -50,8 +50,8 @@ section{
   margin-left:calc(50% - 50vw);
   margin-right:calc(50% - 50vw);
   max-width:none;
-  height:58vh;
-  min-height:340px;
+  height:70vh;
+  min-height:420px;
   overflow:hidden;
   display:flex;
   align-items:center;
@@ -70,7 +70,7 @@ section{
   position:absolute;
   inset:0;
   background-size:cover;
-  background-position:center 35%;
+  background-position:center 25%;
   opacity:0;
   animation:heroFade 7.5s infinite;
   background-repeat:no-repeat;
