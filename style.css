@@ -46,8 +46,8 @@ section{
 
 .hero{
   position:relative;
-  height:70vh;
-  min-height:0;
+  height:85vh;
+  min-height:520px;
   overflow:hidden;
   display:flex;
   align-items:center;
