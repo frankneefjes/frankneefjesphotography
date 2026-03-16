@@ -70,7 +70,7 @@ section{
   position:absolute;
   inset:0;
   background-size:cover;
-  background-position:center 35%;
+  background-position:center 15%;
   opacity:0;
   animation:heroFade 7.5s infinite;
   background-repeat:no-repeat;
