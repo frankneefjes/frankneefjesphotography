@@ -64,10 +64,11 @@ section{
 .hero-bg{
   position:absolute;
   inset:0;
-  background-size:cover;
+  background-size:contain;
   background-position:center;
   opacity:0;
   animation:heroFade 7.5s infinite;
+  background-repeat:no-repeat;
 }
 
 .hero-bg:nth-of-type(1){
@@ -357,7 +358,7 @@ footer{
   }
 
   .hero-bg{
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
