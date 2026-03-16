@@ -70,7 +70,7 @@ section{
   position:absolute;
   inset:0;
   background-size:cover;
-  background-position:center 25%;
+  background-position:center 35%;
   opacity:0;
   animation:heroFade 7.5s infinite;
   background-repeat:no-repeat;
@@ -371,8 +371,8 @@ footer{
   }
 
   .hero-bg{
-    background-size: cover !important;
-    background-position: center 30% !important;
+    background-size: contain !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
   }
 
