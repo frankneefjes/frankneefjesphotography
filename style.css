@@ -280,15 +280,13 @@ footer{
     gap:12px;
   }
   .portfolio-grid a{
-  aspect-ratio:4/3;
   overflow:hidden;
   border-radius:10px;
 }
 
   .portfolio-grid img{
   width:100%;
-  height:100%;
-  object-fit:cover;
+  height:auto;
   display:block;
 }
 
@@ -400,7 +398,6 @@ footer{
   }
 
   .portfolio-grid a{
-    aspect-ratio:4/3;
   }
 }
 .hero-subtitle {
@@ -411,7 +408,6 @@ footer{
 }
 .portfolio-grid img {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
