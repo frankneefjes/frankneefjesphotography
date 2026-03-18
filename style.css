@@ -403,3 +403,21 @@ footer{
     aspect-ratio:4/3;
   }
 }
+/* tekst */
+.portfolio-intro {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* hover effect */
+.portfolio-grid img {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.portfolio-grid img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
