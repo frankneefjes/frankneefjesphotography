@@ -447,3 +447,12 @@ footer{
   );
   pointer-events: none;
 }
+.about {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #ddd;
+  line-height: 1.8;
+  font-size: 16px;
+}
