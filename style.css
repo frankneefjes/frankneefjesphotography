@@ -698,6 +698,7 @@ footer{
 .story-feature {
   position: relative;
   overflow: hidden;
+  margin-bottom: 120px;
 }
 
 .story-feature img {
