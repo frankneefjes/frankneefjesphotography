@@ -761,3 +761,9 @@ footer{
   display: block;
   margin: 60px auto;
 }
+.story-full-image {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 45px auto;
+}
