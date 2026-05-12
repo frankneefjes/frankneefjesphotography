@@ -603,15 +603,3 @@ footer{
 .nav-links a:hover {
   opacity: 0.55;
 }
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.nav-links a:hover {
-  opacity: 0.7;
-}
