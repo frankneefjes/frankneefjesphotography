@@ -726,3 +726,32 @@ footer{
   font-size: 0.75rem;
   opacity: 0.8;
 }
+.story-section {
+  background: #000;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.story-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.story-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.story-section p {
+  color: #ccc;
+  margin-bottom: 32px;
+}
+
+.story-image {
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
