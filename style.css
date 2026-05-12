@@ -664,3 +664,64 @@ footer{
   font-size: 0.75rem;
   opacity: 0.8;
 }
+.stories-section {
+  background: #050505;
+  padding: 140px 40px;
+  color: white;
+}
+
+.stories-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stories-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.stories-section h2 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 20px;
+}
+
+.stories-description {
+  max-width: 600px;
+  color: #bcbcbc;
+  line-height: 1.8;
+  margin-bottom: 60px;
+}
+
+.story-feature {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-feature img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.82);
+}
+
+.story-info {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+.story-info h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.story-info p {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
