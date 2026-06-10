@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <circle cx="300" cy="300" r="280" stroke="white" stroke-width="10" fill="none"/>
+  <circle cx="300" cy="300" r="230" stroke="white" stroke-width="4" fill="none"/>
+
+  <!-- Aperture -->
+  <g stroke="white" stroke-width="8" fill="none">
+    <path d="M300 120 L370 260 L230 260 Z"/>
+    <path d="M480 300 L340 370 L340 230 Z"/>
+    <path d="M300 480 L230 340 L370 340 Z"/>
+    <path d="M120 300 L260 230 L260 370 Z"/>
+  </g>
+
+  <!-- Globe -->
+  <circle cx="300" cy="300" r="90" stroke="white" stroke-width="4" fill="none"/>
+
+  <!-- Text -->
+  <text x="300" y="95" text-anchor="middle" fill="white" font-size="42" font-family="Arial" letter-spacing="3">
+    FRANK NEEFJES
+  </text>
+
+  <text x="300" y="535" text-anchor="middle" fill="white" font-size="32" font-family="Arial" letter-spacing="3">
+    DOCUMENTARY PHOTOGRAPHY
+  </text>
+</svg>

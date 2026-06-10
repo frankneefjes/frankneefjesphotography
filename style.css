@@ -768,3 +768,249 @@ footer{
   display: block;
   margin: 45px auto;
 }
+
+/* Mobile-specific improvements (768px and below) */
+@media (max-width: 768px) {
+  /* Navigation: stack vertically and position closer to edge */
+  .nav-links {
+    top: 12px;
+    left: 12px;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.65rem;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 4px 6px;
+  }
+
+  /* Hero section: reduce height on mobile */
+  .hero {
+    min-height: 50vh;
+    max-height: 60vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem !important;
+  }
+
+  /* Story cards on homepage: reduce padding and full width */
+  .story-section {
+    padding: 30px 16px 40px;
+    background: #000;
+  }
+
+  .story-inner {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .story-section h2 {
+    font-size: 1.5rem;
+    margin: 0 0 8px 0;
+    text-align: center;
+  }
+
+  .story-section > div > p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+  }
+
+  .story-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Story page layout */
+  .story-page {
+    background: #050505;
+  }
+
+  .story-header {
+    max-width: 100%;
+    padding: 20px 16px 24px;
+    margin: 0;
+  }
+
+  .story-header h1 {
+    font-size: 1.7rem;
+    margin: 12px 0 8px 0;
+    line-height: 1.2;
+  }
+
+  .story-header p {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .back-link {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .back-link:hover {
+    color: #fff;
+  }
+
+  /* Story gallery: full width images, minimal padding */
+  .story-gallery {
+    max-width: 100%;
+    padding: 16px 16px 40px;
+    margin: 0;
+  }
+
+  .story-gallery img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* About section */
+  .about {
+    max-width: 100%;
+    margin: 40px 16px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Portfolio section */
+  #portfolio {
+    padding: 30px 16px;
+    text-align: center;
+  }
+
+  #portfolio h2 {
+    font-size: 1.6rem;
+    margin: 0 0 12px;
+  }
+
+  .portfolio-intro {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .portfolio-grid {
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  /* Contact section */
+  .section.contact {
+    max-width: 100%;
+    padding: 30px 16px;
+    margin: 0;
+  }
+
+  .section.contact h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .section.contact p {
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 20px 16px 30px;
+    font-size: 12px;
+  }
+}@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: 55vh;
+  }
+
+  .hero img,
+  .hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #stories,
+  .stories-section {
+    padding-top: 32px;
+  }
+
+  .story-card,
+  .story-cover {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .story-card img,
+  .story-cover img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .story-header,
+  .story-intro {
+    text-align: center;
+    padding: 24px 16px 12px;
+  }
+
+  .story-gallery {
+    padding: 16px;
+  }
+
+  .story-gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 768px) {
+  header nav,
+  .nav-links,
+  .navbar,
+  .site-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+  }
+
+  header nav a,
+  .nav-links a,
+  .navbar a,
+  .site-nav a {
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+}
