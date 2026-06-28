@@ -734,8 +734,19 @@ footer{
 }
 
 .story-inner {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-inner h2,
+.story-inner p {
+    order: 1;
+}
+
+.story-inner a {
+    order: 2;
 }
 
 .story-section h2 {
