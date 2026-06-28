@@ -755,8 +755,10 @@ footer{
 }
 
 .story-section p {
-  color: #ccc;
-  margin-bottom: 32px;
+    max-width: 900px;
+    margin: 0 auto 32px auto;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .story-image {
