@@ -781,6 +781,37 @@ footer{
   transform: scale(1.01);
 }
 
+.story-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.story-link .story-image {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.look-inside {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  z-index: 10;
+  transition: filter 0.3s ease;
+  margin-bottom: 9px;
+  filter: saturate(0%) brightness(1.3);
+}
+
+.story-link:hover .look-inside {
+  color: #e9ecef;
+}
+
 .story-full-image {
   width: 100%;
   max-width: 900px;
@@ -851,6 +882,14 @@ footer{
     display: block;
     margin: 0 auto;
 }
+
+  .look-inside {
+    display: flex;
+    padding: 0;
+    font-size: 0.75rem;
+    gap: 6px;
+    margin-bottom: 9px;
+  }
 
   /* Story page layout */
   .story-page {
