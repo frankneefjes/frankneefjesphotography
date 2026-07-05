@@ -8,14 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260706">
 </head>
 <body>
 
 <div class="nav-links">
-  <a href="#home">Home</a>
-  <a href="#portfolio">Portfolio</a>
+  <a href="index.html">Home</a>
   <a href="stories.html">Stories</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
 </div>
 
   <header id="home" class="hero">
@@ -29,133 +30,14 @@
       <h1>Frank Neefjes</h1>
       <p class="hero-subtitle">Documentary & travel photography — raw, human, unfiltered</p>
 
-<a href="#portfolio" class="btn">View Portfolio</a>
-<a href="stories.html" class="btn">View Stories</a>
+      <a href="stories.html" class="btn">View Stories</a>
+      <a href="portfolio.html" class="btn">View Portfolio</a>
     </div>
   </header>
-
-  <main>
-
-
-    <section id="portfolio">
-      <h2>Portfolio</h2>
-      <p class="portfolio-intro">Click on an image to view full screen</p>
-      <div class="portfolio-grid">
-        <a href="images/10-nomad-woman.jpg"><img src="images/10-nomad-woman.jpg" alt="Elderly woman portrait"></a>
-        <a href="images/07-between-stone-and-light.jpg"><img src="images/07-between-stone-and-light.jpg" alt="Running woman in dust"></a>
-        <a href="iran-mother-child.jpg"><img src="iran-mother-child.jpg" alt="Mother and child Iran"></a>
-        <a href="tibet-travelers-cart.jpg"><img src="tibet-travelers-cart.jpg" alt="Travelers cart Tibet"></a>
-        <a href="images/05-afghanistan-boy-under-cloth-portrait.jpg"><img src="images/05-afghanistan-boy-under-cloth-portrait.jpg" alt="Afghanistan boy under cloth"></a>
-        <a href="tibet-woman-fur-hat.jpg"><img src="tibet-woman-fur-hat.jpg" alt="Tibetan woman fur hat"></a>
-        <a href="06-nomad-man-ladakh.jpg"><img src="06-nomad-man-ladakh.jpg" alt="Man portrait Ladakh"></a>
-        <a href="images/afghanistan/11-two-women-blue-and-red.jpg"><img src="images/afghanistan/11-two-women-blue-and-red.jpg" alt="Two women in blue and red">
-        <a href="03-iran-mosque-colour.jpg"><img src="03-iran-mosque-colour.jpg" alt="Stained glass Iran"></a>
-        <a href="14-monk-drum.jpg"><img src="14-monk-drum.jpg" alt="Monk drum"></a>
-        <a href="15-girl-kashmir.jpg"><img src="15-girl-kashmir.jpg" alt="Girl portrait Kashmir"></a>
-        <a href="images/03-young-monks-myanmar.jpg"><img src="images/03-young-monks-myanmar.jpg" alt="Young monks Myanmar"></a>
-      </div>
-    </section>
-
-    <section class="about">
-      <p>
-        I am a documentary and travel photographer focused on raw, human moments.<br><br>
-        My work explores everyday life in places that are often misunderstood, restricted or rarely seen. I photograph quietly and without interference, aiming to capture reality as it unfolds.<br><br>
-        Through people, light and atmosphere, I look for images that reveal both dignity and complexity.
-      <br><br>
-      <p>Based in the Netherlands, working internationally.</p>
-    </section>
-
-    <section class="section contact" id="contact">
-      <h2>Contact</h2>
-      <p>For editorial, documentary, print or collaboration enquiries, feel free to get in touch.</p>
-      <p><a href="mailto:frankneefjesphotography@outlook.com">frankneefjesphotography@outlook.com</a></p>
-    </section>
-
-  </main>
 
   <footer>
     <p>© 2026 Frank Neefjes Photography. All rights reserved.</p>
   </footer>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    const images = document.querySelectorAll(".portfolio-grid a");
-    let currentIndex = 0;
-    let overlay, img, prev, next;
-
-    function openLightbox(index){
-      currentIndex = index;
-
-      overlay = document.createElement("div");
-      overlay.className = "lightbox";
-      overlay.style.display = "flex";
-
-      img = document.createElement("img");
-      img.src = images[currentIndex].href;
-
-      prev = document.createElement("div");
-      prev.className = "lightbox-prev";
-      prev.innerHTML = "&#10094;";
-
-      next = document.createElement("div");
-      next.className = "lightbox-next";
-      next.innerHTML = "&#10095;";
-
-      overlay.appendChild(prev);
-      overlay.appendChild(img);
-      overlay.appendChild(next);
-
-      document.body.appendChild(overlay);
-
-      overlay.addEventListener("click", closeLightbox);
-      img.addEventListener("click", e => e.stopPropagation());
-
-      prev.addEventListener("click", function(e){
-        e.stopPropagation();
-        showPrev();
-      });
-
-      next.addEventListener("click", function(e){
-        e.stopPropagation();
-        showNext();
-      });
-
-      document.addEventListener("keydown", keyHandler);
-    }
-
-    function closeLightbox(){
-      document.removeEventListener("keydown", keyHandler);
-      if (overlay) overlay.remove();
-    }
-
-    function showNext(){
-      currentIndex++;
-      if(currentIndex >= images.length) currentIndex = 0;
-      img.src = images[currentIndex].href;
-    }
-
-    function showPrev(){
-      currentIndex--;
-      if(currentIndex < 0) currentIndex = images.length - 1;
-      img.src = images[currentIndex].href;
-    }
-
-    function keyHandler(e){
-      if(e.key === "ArrowRight") showNext();
-      if(e.key === "ArrowLeft") showPrev();
-      if(e.key === "Escape") closeLightbox();
-    }
-
-    images.forEach((link, index) => {
-      link.addEventListener("click", function(e){
-        e.preventDefault();
-        openLightbox(index);
-      });
-    });
-
-  });
-  </script>
 
 </body>
 </html>

@@ -124,6 +124,13 @@ section{
   margin:0 0 28px;
 }
 
+.page-check {
+  margin: 8px 0 20px;
+  color: #ddd;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
 .btn{
   display:inline-block;
   padding:12px 28px;
@@ -137,6 +144,18 @@ section{
 .btn:hover{
   background:#fff;
   color:#000;
+}
+
+/* Primary button style for prominent actions (used on contact page) */
+.btn.primary{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+.btn.primary:hover{
+  background:transparent;
+  color:#fff;
 }
 
 /*  */
@@ -197,6 +216,20 @@ section{
   color:var(--muted);
   line-height:1.7;
   margin:8px 0;
+}
+
+/* Email link with envelope icon spacing */
+.email-link{
+  color:inherit;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem; /* standard spacing between icon and text */
+}
+
+.icon-envelope{
+  font-size:1.05em;
+  line-height:1;
 }
 
 footer{
@@ -951,7 +984,7 @@ footer{
 
   /* Portfolio section */
   #portfolio {
-    padding: 30px 16px;
+    padding: 100px 16px 30px;
     text-align: center;
   }
 
@@ -1055,21 +1088,96 @@ footer{
   .nav-links,
   .navbar,
   .site-nav {
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     align-items: center !important;
-    gap: 16px !important;
+    gap: 10px !important;
     flex-wrap: wrap !important;
+    background: rgba(0,0,0,0.85) !important;
+    padding: 10px 12px !important;
+    border-radius: 14px !important;
+    z-index: 1200 !important;
   }
 
   header nav a,
   .nav-links a,
   .navbar a,
   .site-nav a {
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     width: auto !important;
     margin: 0 !important;
+    padding: 6px 10px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+  }
+
+  .hero {
+    min-height: 55vh !important;
+    max-height: 65vh !important;
+    padding-top: 90px !important;
+  }
+
+  .hero-content {
+    padding: 0 16px 24px !important;
+    margin-top: 0 !important;
+    position: relative !important;
+  }
+
+  .hero-content .btn {
+    display: inline-block !important;
+    width: auto !important;
+    margin-right: 10px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .nav-links {
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    background: rgba(0, 0, 0, 0.88) !important;
+    padding: 10px 12px !important;
+    border-radius: 14px !important;
+    z-index: 1200 !important;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem !important;
+    padding: 6px 10px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero {
+    min-height: 55vh !important;
+    max-height: 70vh !important;
+  }
+
+  .hero-content {
+    margin-top: 20px !important;
+    padding: 0 16px 24px !important;
+  }
+
+  .hero-content .btn {
+    display: inline-block !important;
+    width: auto !important;
+    margin-right: 10px !important;
+    margin-bottom: 10px !important;
   }
 }
 .stories-intro {
@@ -1081,8 +1189,14 @@ footer{
 
 .stories-intro h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
+  font-size: 2.3rem;
   margin: 0 0 16px;
+}
+
+@media (min-width: 921px) {
+  .stories-intro h1 {
+    font-size: 2.3rem;
+  }
 }
 
 .stories-intro p {
