@@ -480,6 +480,11 @@ footer{
   );
   pointer-events: none;
 }
+
+.page-header .overlay {
+  display: none;
+}
+
 .about {
   max-width: 700px;
   margin: 120px auto;
